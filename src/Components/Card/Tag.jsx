@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Tag = ({text}) => {
+const Tag = ({ text }) => {
   return (
-    <div className="text-xs font-bold border-white border rounded-sm p-1 my-2 mr-2">{text}</div>
-  )
-}
+    <div className="rounded-sm border border-white p-1 text-xs font-bold print:border-black">
+      {text}
+    </div>
+  );
+};
 
-export default Tag
+export default Tag;

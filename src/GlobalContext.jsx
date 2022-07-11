@@ -9,6 +9,9 @@ export const GlobalStorage = ({ children }) => {
     fetch(
       "https://api.scryfall.com/cards/search?q=t:dog -is:digital order:released"
     )
+      // fetch(
+      //   "./localDogs.json"
+      // )
       .then((response) => response.json())
       .then((json) => setDados(json));
   }

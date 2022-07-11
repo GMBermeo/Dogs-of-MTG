@@ -7,12 +7,13 @@ const ArtCrop = ({ src, large }) => {
   }
 
   return (
-    <img
-      className="my-1 max-h-[100px] cursor-pointer rounded-sm"
-      src={src}
-      alt={src}
+    <div
+      className="my-3 w-full cursor-pointer rounded-md bg-cover bg-center print:hidden sm:h-[200px] md:h-[180px] lg:h-[120px]"
+      style={{ backgroundImage: "url(" + src + ")" }}
+      // src={src}
+      // alt={src}
       onClick={enlarge}
-    />
+    ></div>
   );
 };
 

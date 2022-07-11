@@ -8,7 +8,7 @@ const CardImage = ({ src, large }) => {
 
   return (
     <img
-      className="float-left mr-4 mb-1 max-h-[160px] cursor-pointer rounded-md md:mb-4 md:max-h-[200px]"
+      className="my-1 w-full cursor-pointer rounded-xl px-1 print:w-[220px] print:rounded-none"
       src={src}
       alt={src}
       onClick={enlarge}

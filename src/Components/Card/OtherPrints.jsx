@@ -1,5 +1,5 @@
 import React from "react";
-import ArtCrop from "./ArtCrop";
+import ArtCrop from "./CardImage";
 
 const OtherPrints = ({ prints_search_uri, setPrints, prints }) => {
   React.useEffect(() => {
@@ -13,18 +13,28 @@ const OtherPrints = ({ prints_search_uri, setPrints, prints }) => {
   }, []);
 
   if (prints.length === 1) return null;
+  const quantidade = prints.length + 1;
 
   return (
     <>
       {/* <p>Total Cards: {prints.length}</p> */}
-      <div className="flex flex-col flex-wrap">
+      <div
+        class={
+          quantidade > 4
+            ? "grid grid-cols-4"
+            : quantidade % 2 !== 0
+            ? "grid grid-cols-2"
+            : "grid grid-cols-3"
+        }
+      >
         {prints.map((print) => (
-          <div className="mb-2 text-xs font-bold" key={print.id}>
+          <div className="mb-2 text-center text-xs font-bold" key={print.id}>
             <ArtCrop
-              src={print.image_uris.art_crop}
+              src={print.image_uris.large}
               large={print.image_uris.large}
             />
-            {print.released_at} - {print.set_name}
+            <p>{print.set_name}</p>
+            <p>{print.released_at}</p>
           </div>
         ))}
       </div>

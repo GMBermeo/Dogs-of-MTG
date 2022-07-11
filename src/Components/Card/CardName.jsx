@@ -6,7 +6,7 @@ const CardName = ({ name, link }) => {
     window.open(link, "_blank");
   }
   return (
-    <p className="text-2xl font-light cursor-pointer" onClick={gatherer}>
+    <p className="text-2xl font-regular cursor-pointer" onClick={gatherer}>
       {name}
     </p>
   );

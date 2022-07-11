@@ -1,11 +1,11 @@
 import React from "react";
 import { GlobalStorage } from "./GlobalContext";
-import Cards from "./Components/CardList";
+import CardList from "./Components/CardList";
 
 const App = () => {
   return (
     <GlobalStorage>
-      <Cards />
+      <CardList />
     </GlobalStorage>
   );
 };
