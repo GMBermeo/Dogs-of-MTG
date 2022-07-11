@@ -6,7 +6,9 @@ export const GlobalStorage = ({ children }) => {
   const [dados, setDados] = React.useState(null);
 
   function carregarDogs() {
-    fetch("https://api.scryfall.com/cards/search?q=t:dog -is:digital order:released")
+    fetch(
+      "https://api.scryfall.com/cards/search?q=t:dog -is:digital order:released"
+    )
       .then((response) => response.json())
       .then((json) => setDados(json));
   }
@@ -19,12 +21,8 @@ export const GlobalStorage = ({ children }) => {
     console.log("GlobalStorage: ", dados);
   }, [dados]);
 
-  function limparDados() {
-    setDados(null);
-  }
-
   return (
-    <GlobalContext.Provider value={{ dados, limparDados, carregarDogs }}>
+    <GlobalContext.Provider value={{ dados, carregarDogs, setDados }}>
       {children}
     </GlobalContext.Provider>
   );

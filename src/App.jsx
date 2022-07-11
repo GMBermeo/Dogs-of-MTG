@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalStorage } from "./GlobalContext";
-import Cards from "./Components/Cards";
+import Cards from "./Components/CardList";
 
 const App = () => {
   return (
