@@ -9,7 +9,7 @@ const Card = ({ card }) => {
   const [prints, setPrints] = React.useState([]);
 
   return (
-    <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-0 p-4 shadow-2xl shadow-orange-600/5 print:rounded-none print:bg-transparent print:shadow-none">
+    <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
       <div className="flex justify-between ">
         <div className="text-sm font-medium">{card.released_at}</div>
         <CardTags

@@ -8,7 +8,7 @@ const ArtCrop = ({ src, large }) => {
 
   return (
     <div
-      className="my-3 w-full cursor-pointer rounded-md bg-cover bg-center print:hidden sm:h-[200px] md:h-[180px] lg:h-[120px]"
+      className="my-3 w-full cursor-pointer rounded-md bg-cover bg-center print:block print:hidden sm:h-[200px] md:h-[180px] lg:h-[120px]"
       style={{ backgroundImage: "url(" + src + ")" }}
       // src={src}
       // alt={src}
