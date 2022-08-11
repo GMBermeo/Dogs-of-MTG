@@ -1,0 +1,24 @@
+{
+  "git.enabled": true,
+  "css.lint.unknownAtRules": "ignore",
+  "files.exclude": {
+    "node_modules": true,
+    ".vscode": false,
+    ".gitignore": true,
+    "package.json": true,
+    "package-lock.json": true,
+    "yarn.lock": true,
+    "tailwind.config.cjs": true,
+    "postcss.config.cjs": true,
+    "vite.config.js": true,
+    "readme.md": true,
+    ".gitattributes": true,
+    "public": true,
+    "dist": true,
+    "tsconfig.json": true,
+    "src/custom.d.ts": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
