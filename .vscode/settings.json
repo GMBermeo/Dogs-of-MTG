@@ -5,7 +5,7 @@
     "node_modules": true,
     ".vscode": false,
     ".gitignore": true,
-    "package.json": true,
+    // "package.json": true,
     "package-lock.json": true,
     "yarn.lock": true,
     "tailwind.config.cjs": true,
@@ -13,7 +13,7 @@
     "vite.config.js": true,
     "readme.md": true,
     ".gitattributes": true,
-    "public": true,
+    // "public": true,
     "dist": true,
     "tsconfig.json": true,
     "src/custom.d.ts": true
