@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Dogs of Magic the Gathering
 
-## Getting Started
+<img width="64px" style="float:right; transform: scaleX(-1)" src="https://dogs-of-mtg.bermeo.dev/favicon.svg" alt="Logo"/>
 
-First, run the development server:
+This is an auxiliary tool that lists every Magic the Gathering card with the type "dog" or "hound".
 
-```bash
-npm run dev
-# or
+## features
+
+* Change the fetch request on `GlobalContext.jsx` to easily change the listed cards.
+* It uses some `print:` classes from the Tailwind CSS to print better proxies and use less ink.
+* If the card has Full Art, Promo, Reprint, or Variation prints available it shows a tag on the upper right side.
+ 
+## made with
+
+![React](https://img.shields.io/badge/react-%230d1117.svg?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%230d1117?style=for-the-badge&logo=tailwindcss)
+![Javascript](https://img.shields.io/badge/javascript-%230d1117.svg?style=for-the-badge&logo=javascript)
+![Vite](https://img.shields.io/badge/vite-%230d1117.svg?style=for-the-badge&logo=vite&logoColor=%23646CFF)
+![Deployed on Vercel](https://img.shields.io/badge/vercel-%230d1117.svg?style=for-the-badge&logo=vercel)
+
+## project setup
+
+``` sh
+yarn install
+```
+
+### compiles and hot-reloads for development
+
+``` sh
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### compiles and minifies for production
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+``` sh
+yarn build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## known issues
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* [Release the Dogs (Jumpstart)](https://gatherer.wizards.com/Pages/Card/Details.aspx?name=Release+the+Dogs) is not included, but can be included with a secondary fetch.
+* Tokens are not included.
 
-## Learn More
+## data source
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* [Scryfall API](https://scryfall.com/docs/api)
