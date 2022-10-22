@@ -2,29 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Magic: the Gathering";
+  src: url("./fonts/Magic.ttf") format("truetype");
+}
+
+.font-mtg {
+  font-family: "Magic: the Gathering", serif;
+}
+
+img {
+  page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  page-break-inside: avoid; /* or 'auto' */
+}
+
 body {
-  padding: 0;
+  overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #121213,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #171819,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

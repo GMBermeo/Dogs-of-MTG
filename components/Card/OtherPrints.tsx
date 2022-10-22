@@ -1,7 +1,8 @@
 import React from "react";
+import { TCard } from "../../types/TCard";
 import ArtCrop from "./CardImage";
 
-const OtherPrints = ({ prints_search_uri, setPrints, prints }) => {
+const OtherPrints = ({ prints_search_uri, setPrints, prints }: any) => {
   React.useEffect(() => {
     // eslint-disable-next-line prefer-const
     let allPrints = [];
@@ -20,7 +21,7 @@ const OtherPrints = ({ prints_search_uri, setPrints, prints }) => {
     <>
       {/* <p>Total Cards: {prints.length}</p> */}
       <div
-        class={
+        className={
           quantidade > 4
             ? "grid grid-cols-4"
             : quantidade % 2 !== 0
@@ -28,7 +29,7 @@ const OtherPrints = ({ prints_search_uri, setPrints, prints }) => {
             : "grid grid-cols-3"
         }
       >
-        {prints.map((print) => (
+        {prints.map((print: TCard) => (
           <div className="mb-2 text-center text-xs font-bold" key={print.id}>
             <ArtCrop
               src={print.image_uris.large}

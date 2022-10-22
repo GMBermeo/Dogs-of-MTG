@@ -4,8 +4,9 @@ import ArtCrop from "./Card/ArtCrop";
 import CardName from "./Card/CardName";
 import CardTags from "./Card/CardTags";
 import OtherPrints from "./Card/OtherPrints";
+import { useRouter } from "next/router";
 
-const Card = ({ card }) => {
+const Card = ({ card }: any) => {
   const [prints, setPrints] = React.useState([]);
 
   return (
@@ -21,7 +22,7 @@ const Card = ({ card }) => {
           prints={prints.length}
         />
       </div>
-      <CardName name={card.name} link={card.related_uris.gatherer} />
+      <CardName name={card.name} link={"/card/" + card.id} />
       {prints.length >= 2 && (
         <ArtCrop src={card.image_uris.art_crop} large={card.image_uris.large} />
       )}
