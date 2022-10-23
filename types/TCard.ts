@@ -1,7 +1,7 @@
 export type TCard = {
-  object: string;
+  object: "card" | string;
   id: string;
-  oracle_id: string;
+  oracle_id: string[];
   multiverse_ids: number[];
   tcgplayer_id: number;
   cardmarket_id: number;
@@ -12,9 +12,9 @@ export type TCard = {
   scryfall_uri: string;
   layout: "normal" | string;
   highres_image: boolean;
-  flavor_text: string;
-  image_status: string;
+  image_status: "highres_scan" | string;
   image_uris: ImageUris;
+  flavor_text: string;
   mana_cost: string;
   cmc: number;
   type_line: string;
@@ -48,7 +48,6 @@ export type TCard = {
   rarity: string;
   card_back_id: string;
   artist: string;
-  artist_ids: string[];
   illustration_id: string;
   border_color: string;
   frame: string;
@@ -57,7 +56,7 @@ export type TCard = {
   textless: boolean;
   booster: boolean;
   story_spotlight: boolean;
-  preview: Preview;
+  preview?: Preview;
   prices: Prices;
   related_uris: RelatedUris;
   purchase_uris: PurchaseUris;
@@ -113,12 +112,12 @@ export interface Preview {
 }
 
 export interface Prices {
-  usd: string;
-  usd_foil: string;
-  usd_etched?: any;
-  eur: string;
-  eur_foil: string;
-  tix: string;
+  usd: string | null;
+  usd_foil: string | null;
+  usd_etched?: any | null;
+  eur: string | null;
+  eur_foil: string | null;
+  tix: string | null;
 }
 
 export interface RelatedUris {

@@ -2,18 +2,7 @@ import React from "react";
 import { TCard } from "../../types/TCard";
 import ArtCrop from "./CardImage";
 
-const OtherPrints = ({ prints_search_uri, setPrints, prints }: any) => {
-  React.useEffect(() => {
-    // eslint-disable-next-line prefer-const
-    let allPrints = [];
-    fetch(prints_search_uri)
-      .then((response) => response.json())
-
-      .then((json) => {
-        setPrints(json.data);
-      });
-  }, []);
-
+const OtherPrints = ({ prints }: { prints: TCard[] }) => {
   if (prints.length === 1) return null;
   const quantidade = prints.length + 1;
 

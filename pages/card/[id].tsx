@@ -2,31 +2,22 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import ArtCrop from "../../components/Card/ArtCrop";
 import CardTags from "../../components/Card/CardTags";
+import { getAllCardsIds } from "../../lib/getAllCardsIds";
 import { loadCard } from "../../lib/loadCard";
-import { loadCards } from "../../lib/loadCards";
+import { loadCardPrints } from "../../lib/loadCardPrints";
 import { TCard } from "../../types/TCard";
 
-const CardPage: NextPage = ({ card }: any) => {
-  const [prints, setPrints] = React.useState([]);
-  React.useEffect(() => {
-    // eslint-disable-next-line prefer-const
-    let allPrints = [];
-    fetch(card.prints_search_uri)
-      .then((response) => response.json())
+interface PageProps {
+  card: TCard;
+  prints: TCard[];
+}
 
-      .then((json) => {
-        setPrints(json.data);
-      });
-  }, [card?.prints_search_uri, setPrints]);
-  console.log("prints", prints);
-  console.log("card", card);
-
+const CardPage: NextPage = ({ card, prints }: any) => {
   if (prints.length === 1) return null;
   const quantidade = prints.length + 1;
   // const { id } = context.params!;
-  // const card = context.data[id];
+  // const card = context[id];
 
   // console.log("Card ID: ", card.id);
 
@@ -34,7 +25,7 @@ const CardPage: NextPage = ({ card }: any) => {
     <>
       <Head>
         <title>
-          {`${card?.name} (${card?.frame})`} - The Doggos of Magic the Gathering
+          {`${card.name} (${card.frame})`} - The Doggos of Magic the Gathering
         </title>
         <meta
           name="description"
@@ -93,23 +84,27 @@ const CardPage: NextPage = ({ card }: any) => {
               </div>
             )}
           </div>
-          <>
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {prints.map((print: TCard) => (
-                <div
-                  className="mb-2 text-center text-xs font-bold"
-                  key={print.id}
-                >
-                  <ArtCrop
+
+          <h2 className="mb-2 text-xl font-bold">Other Prints</h2>
+          <div className="grid grid-cols-3 gap-4">
+            {prints.map((print: TCard) => (
+              <a
+                href={`/card/${print.id}`}
+                className="mb-2 text-center text-xs font-bold"
+                key={print.id}
+              >
+                <div>
+                  <img
+                    className="rounded-xl"
                     src={print.image_uris.large}
-                    large={print.image_uris.large}
+                    alt={print.name}
                   />
                   <p>{print.set_name}</p>
                   <p>{print.released_at}</p>
                 </div>
-              ))}
-            </div>
-          </>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>
@@ -118,30 +113,23 @@ const CardPage: NextPage = ({ card }: any) => {
 
 export default CardPage;
 
-// Generates `/posts/1` and `/posts/2`
-// export async function getStaticPaths() {
-export async function getStaticPaths() {
-  const paths = await loadCards();
-
-  return {
-    paths,
-    fallback: true, // can also be true or 'blocking'
-  };
-}
-
-// `getStaticPaths` requires using `getStaticProps`
-// export async function getStaticProps(context: any) {
-//   return {
-//     // Passed to the page component as props
-//     props: { post: {} },
-//   };
-// }
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!;
   const card = await loadCard(id as string);
+  const prints = await loadCardPrints(card.prints_search_uri);
 
   return {
-    props: { card },
+    props: { card, prints },
+  };
+};
+
+// Generates `/posts/1` and `/posts/2`
+// export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getAllCardsIds();
+
+  return {
+    paths: paths,
+    fallback: false, // can also be true or 'blocking'
   };
 };

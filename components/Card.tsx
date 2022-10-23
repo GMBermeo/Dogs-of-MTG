@@ -4,10 +4,17 @@ import ArtCrop from "./Card/ArtCrop";
 import CardName from "./Card/CardName";
 import CardTags from "./Card/CardTags";
 import OtherPrints from "./Card/OtherPrints";
-import { useRouter } from "next/router";
+import { loadCardPrints } from "../lib/loadCardPrints";
+import { TCard } from "../types/TCard";
 
-const Card = ({ card }: any) => {
-  const [prints, setPrints] = React.useState([]);
+export const Card = ({ card }: { card: TCard }) => {
+  const [prints, setPrints] = React.useState<TCard[]>([]);
+
+  React.useEffect(() => {
+    loadCardPrints(card.prints_search_uri).then((data) => {
+      setPrints(data);
+    });
+  }, [card.prints_search_uri]);
 
   return (
     <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
@@ -34,15 +41,9 @@ const Card = ({ card }: any) => {
       ) : (
         <>
           <p className="font-bold">{card.set_name}</p>
-          <OtherPrints
-            prints_search_uri={card.prints_search_uri}
-            setPrints={setPrints}
-            prints={prints}
-          />
+          <OtherPrints prints={prints} />
         </>
       )}
     </div>
   );
 };
-
-export default Card;

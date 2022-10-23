@@ -17,7 +17,5 @@ export async function loadCards() {
   // console.log("Dogs local carregados");
   // }
 
-  console.log(cards);
-
   return cards;
 }
