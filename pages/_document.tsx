@@ -14,8 +14,8 @@ class MyDocument extends Document {
               __html: JSON.stringify({
                 "@context": "http://schema.org",
                 "@type": "Person",
-                name: "Guilherme Bermêo",
-                url: "http://www.bermeo.dev",
+                name: "The Dogs of Magic The Gathering",
+                url: "http://dogs-of-mtg.bermeo.dev",
                 sameAs: [
                   "https://github.com/GMBermeo",
                   "https://www.linkedin.com/in/gmbermeo/",
@@ -35,7 +35,7 @@ class MyDocument extends Document {
                   "https://y.qq.com/n/yqq/singer/002TUXMq1927t7.html",
                 ],
                 email: "mailto:guilherme@bermeo.dev",
-                image: "/avatar1.jpg",
+                image: "https://bermeo.dev/avatar1.jpg",
                 jobTitle: "Front-end Developer",
                 address: {
                   "@type": "PostalAddress",
@@ -46,17 +46,18 @@ class MyDocument extends Document {
             }}
           />
           <meta name="author" content="Guilherme Bermêo" />
+          <link rel="canonical" href="https://dogs-of-mtg.bermeo.dev" />
           <meta name="language" content="English" />
           <meta
             name="keywords"
             content="HTML, CSS, JavaScript, React, Next.js, Typescript, Front-end, Brasília, Roraima, Guilherme Bermêo, Bermeo, Vue.js, Tailwind CSS, Bootstrap"
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
+          {/* <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
+          /> */}
+          {/* <Script id="google-analytics" strategy="afterInteractive">
             {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -64,7 +65,7 @@ class MyDocument extends Document {
 
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
         `}
-          </Script>
+          </Script> */}
         </Head>
         <body>
           <Main />

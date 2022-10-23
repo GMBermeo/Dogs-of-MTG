@@ -142,7 +142,7 @@ export interface AllPart {
   uri: string;
 }
 
-export type TCardManual = {
+type TCardManual = {
   object: string;
   id: string;
   oracle_id: string;

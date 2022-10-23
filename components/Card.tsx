@@ -17,7 +17,10 @@ export const Card = ({ card }: { card: TCard }) => {
   }, [card.prints_search_uri]);
 
   return (
-    <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
+    <a
+      href={`/card/${card.id}`}
+      className="row-end-auto m-0 rounded-lg bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none"
+    >
       <div className="flex justify-between ">
         <div className="text-sm font-medium">{card.released_at}</div>
         <CardTags
@@ -44,6 +47,6 @@ export const Card = ({ card }: { card: TCard }) => {
           <OtherPrints prints={prints} />
         </>
       )}
-    </div>
+    </a>
   );
 };

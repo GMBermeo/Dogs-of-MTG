@@ -17,12 +17,11 @@ export async function getAllCardsIds() {
   //   allCardsUnformated.push(...prints);
   // }
 
-  data.map((card) => {
-    getPrints(card);
-    allCardsUnformated.push(card);
-  });
+  // data.map((card) => {
+  //   getPrints(card);
+  //   allCardsUnformated.push(card);
+  // });
 
-  allCardsUnformated.push(...data);
   async function getPrints(card: TCard) {
     const prints = await loadCardPrints(card.prints_search_uri);
     prints.forEach((element) => {
@@ -30,7 +29,7 @@ export async function getAllCardsIds() {
     });
   }
 
-  data.forEach((card) => {
+  data.map((card) => {
     allCards.push({ params: { id: card.id } });
     getPrints(card);
   });
