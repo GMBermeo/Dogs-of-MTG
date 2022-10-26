@@ -1,9 +1,9 @@
 import React from "react";
-import CardImage from "./Card/CardImage";
-import ArtCrop from "./Card/ArtCrop";
-import CardName from "./Card/CardName";
-import CardTags from "./Card/CardTags";
-import OtherPrints from "./Card/OtherPrints";
+import { CardImage } from "./Card/CardImage";
+import { ArtCrop } from "./Card/ArtCrop";
+import { CardName } from "./Card/CardName";
+import { CardTags } from "./Card/CardTags";
+import { OtherPrints } from "./Card/OtherPrints";
 import { loadCardPrints } from "../lib/loadCardPrints";
 import { TCard } from "../types/TCard";
 
@@ -29,16 +29,30 @@ export const Card = ({ card }: { card: TCard }) => {
           reprint={card.reprint}
           variation={card.variation}
           frame={card.frame}
-          prints={prints.length}
         />
       </div>
       <CardName name={card.name} link={"/card/" + card.id} />
       {prints.length >= 2 && (
-        <ArtCrop src={card.image_uris.art_crop} large={card.image_uris.large} />
+        <ArtCrop
+          id={card.id}
+          artCrop={card.image_uris.art_crop}
+          large={card.image_uris.large}
+          name={card.name}
+          artist={card.artist}
+          frame={card.frame}
+        />
       )}
       {prints.length === 1 ? (
         <>
-          <CardImage src={card.image_uris.png} large={card.image_uris.large} />
+          <CardImage
+            png={card.image_uris.png}
+            large={card.image_uris.large}
+            id={card.id}
+            name={card.name}
+            artist={card.artist}
+            frame={card.frame}
+            flavor_text={card?.flavor_text}
+          />
           <p className="text-center font-bold">{card.set_name}</p>
         </>
       ) : (

@@ -29,7 +29,7 @@ export async function getAllCardsIds() {
     });
   }
 
-  data.map((card) => {
+  data?.map((card) => {
     allCards.push({ params: { id: card.id } });
     getPrints(card);
   });

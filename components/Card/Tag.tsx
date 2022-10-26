@@ -1,8 +1,12 @@
 import React from "react";
 
-const Tag = ({ text }: { text: string }) => {
+type TagProps = {
+  text: string;
+};
+
+const Tag = ({ text }: TagProps) => {
   return (
-    <div className="rounded-sm border border-white p-1 text-xs font-bold print:border-black">
+    <div className="my-auto rounded-sm border border-white p-1 text-xs font-bold print:border-black">
       {text}
     </div>
   );

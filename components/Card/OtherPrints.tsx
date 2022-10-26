@@ -1,8 +1,12 @@
 import React from "react";
 import { TCard } from "../../types/TCard";
-import ArtCrop from "./CardImage";
+import { ArtCrop } from "./ArtCrop";
 
-const OtherPrints = ({ prints }: { prints: TCard[] }) => {
+interface OtherPrintsProps {
+  prints: TCard[];
+}
+
+export const OtherPrints = ({ prints }: OtherPrintsProps) => {
   if (prints.length === 1) return null;
   const quantidade = prints.length + 1;
 
@@ -21,8 +25,11 @@ const OtherPrints = ({ prints }: { prints: TCard[] }) => {
         {prints.map((print: TCard) => (
           <div className="mb-2 text-center text-xs font-bold" key={print.id}>
             <ArtCrop
-              src={print.image_uris.large}
               large={print.image_uris.large}
+              id={print.id}
+              name={print.name}
+              artist={print.artist}
+              frame={print.frame}
             />
             <p>{print.set_name}</p>
             <p>{print.released_at}</p>
@@ -32,5 +39,3 @@ const OtherPrints = ({ prints }: { prints: TCard[] }) => {
     </>
   );
 };
-
-export default OtherPrints;

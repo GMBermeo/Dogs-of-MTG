@@ -1,7 +1,16 @@
+import { TCard } from "@/types/TCard";
 import React from "react";
 import Tag from "./Tag";
 
-const CardTags = ({ full_art, promo, reprint, variation, prints, frame }) => {
+type CardTagsProps = Partial<TCard> & {};
+
+export const CardTags = ({
+  full_art,
+  promo,
+  reprint,
+  variation,
+  frame,
+}: CardTagsProps) => {
   if (!full_art && !promo && !reprint && !variation)
     return (
       <>
@@ -18,5 +27,3 @@ const CardTags = ({ full_art, promo, reprint, variation, prints, frame }) => {
     </>
   );
 };
-
-export default CardTags;

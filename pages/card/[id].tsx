@@ -3,13 +3,18 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
-import CardTags from "../../components/Card/CardTags";
-import { getAllCardsIds } from "../../lib/getAllCardsIds";
-import { loadCard } from "../../lib/loadCard";
-import { loadCardPrints } from "../../lib/loadCardPrints";
-import { TCard } from "../../types/TCard";
+import { CardTags } from "@/components/Card/CardTags";
+import { getAllCardsIds } from "@/lib/getAllCardsIds";
+import { loadCard } from "@/lib/loadCard";
+import { loadCardPrints } from "@/lib/loadCardPrints";
+import { TCard } from "@/types/TCard";
 
-const CardPage: NextPage = ({ card, prints }: any) => {
+type CardPageProps = {
+  card: TCard;
+  prints: TCard[];
+};
+
+const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
   // console.log(prints);
 
   return (
@@ -21,18 +26,18 @@ const CardPage: NextPage = ({ card, prints }: any) => {
         <meta
           name="description"
           content={
-            card.flavor_text
-              ? `${card.flavor_text}. Painted by ${card.artist} (${card.frame})`
-              : `${card.name} - ${card.set_name}. Painted by ${card.artist} (${card.frame})`
+            card?.flavor_text
+              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.frame})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.frame})`
           }
         />
       </Head>
       <div className="mx-auto mt-4 max-w-2xl rounded-lg">
         <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
           <div className="flex justify-between ">
-            <h1 className="text-2xl font-medium">{card.name}</h1>
+            <h1 className="text-2xl font-medium">{card?.name}</h1>
             <div className="my-auto text-sm font-medium">
-              {card.released_at}
+              {card?.released_at}
             </div>
             <div className="my-auto text-sm font-medium">
               Total prints: {prints?.length}
@@ -40,39 +45,38 @@ const CardPage: NextPage = ({ card, prints }: any) => {
 
             <div className="flex gap-x-4">
               <CardTags
-                full_art={card.full_art}
-                promo={card.promo}
-                reprint={card.reprint}
-                variation={card.variation}
-                frame={card.frame}
-                prints={prints?.length}
+                full_art={card?.full_art}
+                promo={card?.promo}
+                reprint={card?.reprint}
+                variation={card?.variation}
+                frame={card?.frame}
               />
             </div>
           </div>
-          <a href={card.image_uris.art_crop ?? ""}>
+          <a href={card?.image_uris.art_crop ?? ""}>
             <img
               className="my-4 min-w-full rounded"
-              src={card.image_uris.art_crop ?? card.image_uris.large}
-              alt={card.name}
+              src={card?.image_uris.art_crop ?? card?.image_uris.large}
+              alt={card?.name}
             />
           </a>
           <div className="flex justify-between font-bold">
-            <div className="whitespace-pre-line">{card.type_line}</div>
-            <div>{card.set_name}</div>
+            <div className="whitespace-pre-line">{card?.type_line}</div>
+            <div>{card?.set_name}</div>
           </div>
           <div className="p-4 text-lg">
-            <p className="mb-2 text-sm text-slate-300">{card.oracle_text}</p>
-            <p className="italic">{card.flavor_text ?? ""}</p>
+            <p className="mb-2 text-sm text-slate-300">{card?.oracle_text}</p>
+            <p className="italic">{card?.flavor_text ?? ""}</p>
           </div>
 
           <div className="mb-4 flex justify-between">
             <div className="my-auto flex flex-col text-sm font-semibold">
               <div>{card?.collector_number}</div>
-              <div>{card.artist}</div>
+              <div>{card?.artist}</div>
             </div>
-            {card.power && (
+            {card?.power && (
               <div className="rounded-xl border border-white p-4 text-3xl">
-                {card.power} / {card.toughness}
+                {card?.power} / {card?.toughness}
               </div>
             )}
           </div>
@@ -114,7 +118,7 @@ export default CardPage;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params!;
   const card = await loadCard(id as string);
-  const printsResponse: TCard[] = await loadCardPrints(card.prints_search_uri);
+  const printsResponse: TCard[] = await loadCardPrints(card?.prints_search_uri);
   const stringifiedPrints = JSON.stringify(printsResponse);
   const trimmedPrints = stringifiedPrints?.trim() || "";
   const prints: TCard[] = await JSON.parse(trimmedPrints);
