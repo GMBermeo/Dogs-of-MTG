@@ -17,13 +17,13 @@ type CardPageProps = {
 
 const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
   // console.log(prints);
-  const quantidade = prints.length;
+  const quantidade = prints?.length;
 
   const columns =
-    quantidade == 1
-      ? "grid-cols-1"
-      : quantidade == 2
-      ? "grid-cols-2"
+    quantidade == 1 || quantidade == 2 || quantidade == 3
+      ? `grid-cols-${quantidade}`
+      : quantidade % 2 == 0 && quantidade % 3 != 0
+      ? "grid-cols-4"
       : "grid-cols-3";
 
   return (
@@ -41,14 +41,14 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           }
         />
       </Head>
-      <div className="mx-auto my-4 max-w-2xl rounded-lg">
-        <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
+      <div className="mx-auto mb-2 max-w-2xl md:mt-4">
+        <div className="row-end-auto m-0 rounded-none bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none md:rounded-lg">
           <div className="flex justify-between ">
             <h1 className="text-2xl font-medium">{card?.name}</h1>
             <div className="my-auto text-sm font-medium">
               {card?.released_at}
             </div>
-            <div className="my-auto text-sm font-medium">
+            <div className="my-auto hidden text-sm font-medium md:block">
               Total prints: {prints?.length}
             </div>
 
@@ -79,13 +79,11 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           </div>
 
           <div className="mb-4 flex justify-between">
-            <div className="my-auto flex flex-col text-sm font-semibold">
+            <div className="flex flex-col justify-evenly text-sm font-semibold">
               <div>#{card?.collector_number}</div>
               <div className="flex">
-                <h4>
-                  <PaintBrushIcon className="mr-2 h-4 w-4 text-white" />
-                  {card?.artist}
-                </h4>
+                <PaintBrushIcon className="my-auto mr-1 h-4 w-4 text-white" />
+                <h4>{card?.artist}</h4>
               </div>
             </div>
             {card?.power && (
@@ -96,7 +94,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           </div>
           {prints && (
             <section>
-              <h5 className="mb-2 text-xl font-bold">Prints</h5>
+              <h5 className="mb-2 text-2xl">Prints</h5>
               <div className={`grid gap-4 ${columns}`}>
                 {prints.map((print: TCard) => (
                   <div

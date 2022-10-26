@@ -19,9 +19,9 @@ export const Card = ({ card }: { card: TCard }) => {
   return (
     <a
       href={`/card/${card.id}`}
-      className="row-end-auto m-0 rounded-lg bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none"
+      className="row-end-auto m-0 rounded-xl bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none"
     >
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
         <CardTags
           full_art={card.full_art}
@@ -53,11 +53,11 @@ export const Card = ({ card }: { card: TCard }) => {
             frame={card.frame}
             flavor_text={card?.flavor_text}
           />
-          <p className="text-center font-bold">{card.set_name}</p>
+          <h4 className="text-center font-bold">{card.set_name}</h4>
         </>
       ) : (
         <>
-          <p className="font-bold">{card.set_name}</p>
+          <h4 className="font-bold">{card.set_name}</h4>
           <OtherPrints prints={prints} />
         </>
       )}

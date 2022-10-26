@@ -14,7 +14,7 @@ export const CardTags = ({
   if (!full_art && !promo && !reprint && !variation)
     return (
       <>
-        <div className="my-auto text-sm font-medium">{frame}</div>
+        <div className="my-auto max-h-4 text-sm font-medium">{frame}</div>
       </>
     );
 

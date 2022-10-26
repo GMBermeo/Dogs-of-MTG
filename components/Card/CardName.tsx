@@ -11,8 +11,8 @@ export const CardName = ({ name, link }: CardNameProps) => {
     window.open(link, "_blank");
   }
   return (
-    <p className="font-regular cursor-pointer text-2xl" onClick={gatherer}>
+    <h3 className="font-regular cursor-pointer text-2xl" onClick={gatherer}>
       {name}
-    </p>
+    </h3>
   );
 };
