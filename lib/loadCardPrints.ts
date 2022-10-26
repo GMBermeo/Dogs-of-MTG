@@ -1,5 +1,5 @@
-import { TCard } from "../types/TCard";
-import { TList } from "../types/TList";
+import { TCard } from "@/types/TCard";
+import { TList } from "@/types/TList";
 
 export async function loadCardPrints(
   prints_search_uri: string

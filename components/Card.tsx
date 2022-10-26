@@ -4,8 +4,8 @@ import { ArtCrop } from "./Card/ArtCrop";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
 import { OtherPrints } from "./Card/OtherPrints";
-import { loadCardPrints } from "../lib/loadCardPrints";
-import { TCard } from "../types/TCard";
+import { loadCardPrints } from "@/lib/loadCardPrints";
+import { TCard } from "@/types/TCard";
 
 export const Card = ({ card }: { card: TCard }) => {
   const [prints, setPrints] = React.useState<TCard[]>([]);

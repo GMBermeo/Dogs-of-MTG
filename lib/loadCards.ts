@@ -1,4 +1,4 @@
-import { TList } from "../types/TList";
+import { TList } from "@/types/TList";
 
 export async function loadCards() {
   const res = await fetch(

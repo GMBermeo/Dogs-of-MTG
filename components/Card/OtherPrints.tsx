@@ -1,5 +1,5 @@
 import React from "react";
-import { TCard } from "../../types/TCard";
+import { TCard } from "@/types/TCard";
 import { ArtCrop } from "./ArtCrop";
 
 interface OtherPrintsProps {

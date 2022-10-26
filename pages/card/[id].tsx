@@ -8,6 +8,7 @@ import { getAllCardsIds } from "@/lib/getAllCardsIds";
 import { loadCard } from "@/lib/loadCard";
 import { loadCardPrints } from "@/lib/loadCardPrints";
 import { TCard } from "@/types/TCard";
+import { PaintBrushIcon } from "@heroicons/react/24/solid";
 
 type CardPageProps = {
   card: TCard;
@@ -32,7 +33,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           }
         />
       </Head>
-      <div className="mx-auto mt-4 max-w-2xl rounded-lg">
+      <div className="mx-auto my-4 max-w-2xl rounded-lg">
         <div className="row-end-auto m-0 rounded-lg bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none">
           <div className="flex justify-between ">
             <h1 className="text-2xl font-medium">{card?.name}</h1>
@@ -61,8 +62,8 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             />
           </a>
           <div className="flex justify-between font-bold">
-            <div className="whitespace-pre-line">{card?.type_line}</div>
-            <div>{card?.set_name}</div>
+            <h2 className="whitespace-pre-line">{card?.type_line}</h2>
+            <h3>{card?.set_name}</h3>
           </div>
           <div className="p-4 text-lg">
             <p className="mb-2 text-sm text-slate-300">{card?.oracle_text}</p>
@@ -72,7 +73,10 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           <div className="mb-4 flex justify-between">
             <div className="my-auto flex flex-col text-sm font-semibold">
               <div>{card?.collector_number}</div>
-              <div>{card?.artist}</div>
+              <h4>
+                <PaintBrushIcon className="mr-2 h-6 w-6 text-white" />
+                {card?.artist}
+              </h4>
             </div>
             {card?.power && (
               <div className="rounded-xl border border-white p-4 text-3xl">
@@ -82,7 +86,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           </div>
           {prints && (
             <>
-              <h2 className="mb-2 text-xl font-bold">Other Prints</h2>
+              <h5 className="mb-2 text-xl font-bold">Prints</h5>
               <div className="grid grid-cols-3 gap-4">
                 {prints.map((print: TCard) => (
                   <div
@@ -98,7 +102,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                         />
                       </a>
                       <a href={print.related_uris.gatherer ?? ""}>
-                        <p>{print.set_name}</p>
+                        <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
                       </a>
                     </div>
