@@ -8,7 +8,7 @@ import { getAllCardsIds } from "@/lib/getAllCardsIds";
 import { loadCard } from "@/lib/loadCard";
 import { loadCardPrints } from "@/lib/loadCardPrints";
 import { TCard } from "@/types/TCard";
-import { PaintBrushIcon } from "@heroicons/react/24/solid";
+import { PaintBrushIcon } from "@heroicons/react/20/solid";
 
 type CardPageProps = {
   card: TCard;
@@ -17,6 +17,14 @@ type CardPageProps = {
 
 const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
   // console.log(prints);
+  const quantidade = prints.length;
+
+  const columns =
+    quantidade == 1
+      ? "grid-cols-1"
+      : quantidade == 2
+      ? "grid-cols-2"
+      : "grid-cols-3";
 
   return (
     <>
@@ -72,11 +80,13 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
 
           <div className="mb-4 flex justify-between">
             <div className="my-auto flex flex-col text-sm font-semibold">
-              <div>{card?.collector_number}</div>
-              <h4>
-                <PaintBrushIcon className="mr-2 h-6 w-6 text-white" />
-                {card?.artist}
-              </h4>
+              <div>#{card?.collector_number}</div>
+              <div className="flex">
+                <h4>
+                  <PaintBrushIcon className="mr-2 h-4 w-4 text-white" />
+                  {card?.artist}
+                </h4>
+              </div>
             </div>
             {card?.power && (
               <div className="rounded-xl border border-white p-4 text-3xl">
@@ -85,9 +95,9 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             )}
           </div>
           {prints && (
-            <>
+            <section>
               <h5 className="mb-2 text-xl font-bold">Prints</h5>
-              <div className="grid grid-cols-3 gap-4">
+              <div className={`grid gap-4 ${columns}`}>
                 {prints.map((print: TCard) => (
                   <div
                     className="mb-2 text-center text-xs font-bold"
@@ -109,7 +119,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                   </div>
                 ))}
               </div>
-            </>
+            </section>
           )}
         </div>
       </div>
