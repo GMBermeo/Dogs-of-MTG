@@ -1,6 +1,6 @@
 # The Dogs of Magic the Gathering
 
-<img width="64px" style="float:right; transform: scaleX(-1)" src="https://dogs-of-mtg.bermeo.dev/favicon.svg" alt="Logo"/>
+<img width="64px" style="float:right; transform: scaleX(-1)" src="https://dogs-of-mtg.bermeo.dev/Logo.svg" alt="Logo"/>
 
 This is an auxiliary tool that lists every Magic the Gathering card with the type "dog" or "hound".
 

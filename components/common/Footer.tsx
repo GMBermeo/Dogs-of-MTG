@@ -1,25 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const Footer = () => {
   return (
     <footer className="mb-4 flex w-screen flex-col py-4 px-4 md:px-8">
       <div className="flex justify-between">
-        <a
-          href="https://dogs-of-mtg.bermeo.dev"
-          className="hidden opacity-50 hover:opacity-100 md:block"
-        >
+        <Link href="/" className="hidden opacity-50 hover:opacity-100 md:block">
           <Image
-            src="/favicon.svg"
+            src="/Logo.svg"
             height={36}
             width={36}
             alt="The Dogs of Magic of the Gathering Logo"
           />
-        </a>
+        </Link>
         <div className="my-auto">
           <h2 className="text-sm font-semibold text-[#333545] hover:text-[#3e4153] md:text-base">
-            <a href="https://bermeo.dev">Developed by Guilherme Bermeo</a>
+            <a href="https://www.bermeo.dev">Developed by Guilherme Bermeo</a>
           </h2>
         </div>
         <div className="flex justify-end gap-x-4 md:gap-x-6">
