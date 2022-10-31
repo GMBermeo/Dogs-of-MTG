@@ -10,7 +10,7 @@ export async function getAllCardsIds() {
   // eslint-disable-next-line prefer-const
   let allCards: PathParams[] = [];
   const allCardsUnformated: TCard[] = [];
-  const { data }: { data: TCard[] } = await loadCards();
+  const data: TCard[] = await loadCards();
 
   // async function getPrints(card: TCard) {
   //   const prints = await loadCardPrints(card.prints_search_uri);

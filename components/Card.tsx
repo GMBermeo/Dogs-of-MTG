@@ -25,11 +25,9 @@ export const Card = ({ card }: { card: TCard }) => {
       <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
         {prints.length > 1 && (
-          <Link href={`/card/${card.id}`}>
-            <h6 className="text-center text-sm font-semibold">
-              {prints.length} prints
-            </h6>
-          </Link>
+          <h6 className="text-center text-sm font-semibold">
+            {prints.length} prints
+          </h6>
         )}
       </div>
       <div className="mt-1 flex justify-between">
@@ -45,6 +43,7 @@ export const Card = ({ card }: { card: TCard }) => {
       <CardImage
         png={card.image_uris.png}
         large={card.image_uris.large}
+        small={card.image_uris.small}
         id={card.id}
         name={card.name}
         artist={card.artist}

@@ -142,6 +142,78 @@ export interface AllPart {
   uri: string;
 }
 
+interface CardFace {
+  object: string;
+  name: string;
+  mana_cost: string;
+  type_line: string;
+  oracle_text: string;
+  colors: string[];
+  power: string;
+  toughness: string;
+  artist: string;
+  artist_id: string;
+  illustration_id: string;
+  image_uris: ImageUris;
+  flavor_name: string;
+}
+
+export type TCardDoubleFaced = {
+  object: string;
+  id: string;
+  oracle_id: string;
+  multiverse_ids: any[];
+  tcgplayer_id: number;
+  name: string;
+  lang: string;
+  released_at: string;
+  uri: string;
+  scryfall_uri: string;
+  layout: string;
+  highres_image: boolean;
+  image_status: string;
+  cmc: number;
+  type_line: string;
+  color_identity: string[];
+  keywords: any[];
+  card_faces: CardFace[];
+  all_parts: AllPart[];
+  legalities: Legalities;
+  games: string[];
+  reserved: boolean;
+  foil: boolean;
+  nonfoil: boolean;
+  finishes: string[];
+  oversized: boolean;
+  promo: boolean;
+  reprint: boolean;
+  variation: boolean;
+  set_id: string;
+  set: string;
+  set_name: string;
+  set_type: string;
+  set_uri: string;
+  set_search_uri: string;
+  scryfall_set_uri: string;
+  rulings_uri: string;
+  prints_search_uri: string;
+  collector_number: string;
+  digital: boolean;
+  rarity: string;
+  artist: string;
+  artist_ids: string[];
+  border_color: string;
+  frame: string;
+  frame_effects: string[];
+  full_art: boolean;
+  textless: boolean;
+  booster: boolean;
+  story_spotlight: boolean;
+  prices: Prices;
+  related_uris: RelatedUris;
+  purchase_uris: PurchaseUris;
+};
+
 type TCardManual = {
   object: string;
   id: string;

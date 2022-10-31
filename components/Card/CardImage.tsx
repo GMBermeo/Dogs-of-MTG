@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type CardImageProps = {
@@ -8,6 +9,7 @@ type CardImageProps = {
   artist: string;
   frame: string;
   flavor_text?: string;
+  small: string;
 };
 
 export const CardImage = ({
@@ -18,6 +20,7 @@ export const CardImage = ({
   frame,
   large,
   flavor_text,
+  small,
 }: CardImageProps) => {
   function enlarge(e: { preventDefault: () => void }) {
     e.preventDefault();
@@ -25,12 +28,20 @@ export const CardImage = ({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    // <div className="relative h-full w-full">
+    <Image
       className="my-2 w-full cursor-pointer rounded-xl px-1 print:block print:w-[220px] print:rounded-none"
       src={png}
       alt={`${name} - ${artist} (${frame}) ${flavor_text ? flavor_text : ""}`}
       onClick={enlarge}
+      blurDataURL={small}
+      placeholder="blur"
+      width={678}
+      height={935}
+      unoptimized
+      // objectFit="contain"
+      // fill={true}
     />
+    // </div>
   );
 };

@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
+  images: {
+    domains: ["cards.scryfall.io"],
+  },
   i18n: {
     locales: ["en-US"],
     defaultLocale: "en-US",
