@@ -8,12 +8,12 @@ export const Footer = () => {
     <footer className="mb-4 flex w-screen flex-col py-4 px-4 md:px-8">
       <div className="flex justify-between">
         <Link href="/" className="hidden opacity-50 hover:opacity-100 md:block">
-          <Image
+          {/* <Image
             src="/Logo.svg"
             height={36}
             width={36}
-            alt="The Dogs of Magic of the Gathering Logo"
-          />
+            alt="The 🦀 of Magic of the Gathering Logo"
+          /> */}
         </Link>
         <div className="my-auto">
           <h2 className="text-sm font-semibold text-[#333545] hover:text-[#3e4153] md:text-base">

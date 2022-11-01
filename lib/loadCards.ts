@@ -4,20 +4,20 @@ import { TList } from "@/types/TList";
 export async function loadCards() {
   const cardCollection: TCard[] = [];
 
-  const dogCards = await fetch(
-    "https://api.scryfall.com/cards/search?q=t:dog -is:digital order:released unique:art"
+  const crabCards = await fetch(
+    "https://api.scryfall.com/cards/search?q=t:crab -is:digital order:released unique:prints -is:dfc -is:mdfc"
   )
     .then((res) => res.json() as Promise<TList>)
     .then((data) => cardCollection.push(...data.data));
 
-  const releaseTheDogs = await fetch(
-    "https://api.scryfall.com/cards/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9"
-  )
-    .then((res) => res.json() as Promise<TCard>)
-    .then((data) => cardCollection.push(data));
+  // const releaseTheDogs = await fetch(
+  //   "https://api.scryfall.com/cards/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9"
+  // )
+  //   .then((res) => res.json() as Promise<TCard>)
+  //   .then((data) => cardCollection.push(data));
 
-  const dogTokens = await fetch(
-    "https://api.scryfall.com/cards/search?q=t:dog t:token unique:art -is:dfc -is:mdfc"
+  const crabTokens = await fetch(
+    "https://api.scryfall.com/cards/search?q=t:crab t:token unique:art -is:dfc -is:mdfc"
   )
     .then((res) => res.json() as Promise<TList>)
     .then((data) => cardCollection.push(...data.data));
