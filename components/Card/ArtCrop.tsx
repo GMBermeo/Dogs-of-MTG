@@ -1,6 +1,7 @@
 import { ImageUris } from "@/types/TCard";
 import { useRouter } from "next/router";
 import React from "react";
+import Image from "next/image";
 
 type ArtCropProps = {
   artCrop?: string;
@@ -44,8 +45,7 @@ export const ArtCrop = ({
     );
   else
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
+      <Image
         className="my-1 w-full cursor-pointer rounded-lg px-1 print:block print:w-[220px] print:rounded-none"
         src={large}
         alt={`${name} - ${artist} (${frame})`}

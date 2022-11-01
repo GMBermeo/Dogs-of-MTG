@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
-import React from "react";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
 import { loadCard } from "@/lib/loadCard";
@@ -62,13 +63,18 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               />
             </div>
           </div>
-          <a href={card?.image_uris.art_crop ?? ""}>
-            <img
+          <Link href={card?.image_uris.art_crop ?? ""}>
+            <Image
               className="my-4 min-w-full rounded"
               src={card?.image_uris.art_crop ?? card?.image_uris.large}
               alt={card?.name}
+              width={624}
+              height={455.5}
+              priority
+              placeholder="blur"
+              blurDataURL={card?.image_uris.art_crop}
             />
-          </a>
+          </Link>
           <div className="flex justify-between font-bold">
             <h2 className="whitespace-pre-line">{card?.type_line}</h2>
             <h3>{card?.set_name}</h3>
@@ -102,17 +108,21 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                     key={print.id}
                   >
                     <div>
-                      <a href={print.image_uris.large ?? ""}>
-                        <img
-                          className="mb-1 rounded-xl"
-                          src={print.image_uris.large}
+                      <Link href={print.image_uris.large}>
+                        <Image
+                          className="mb-1"
+                          src={print.image_uris.png}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
+                          width={672}
+                          height={936}
+                          blurDataURL={print.image_uris.small}
+                          placeholder="blur"
                         />
-                      </a>
-                      <a href={print.related_uris.gatherer ?? ""}>
+                      </Link>
+                      <Link href={print.related_uris.gatherer ?? ""}>
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

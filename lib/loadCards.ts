@@ -22,6 +22,12 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) => cardCollection.push(...data.data));
 
+  const alpineHoundmaster = await fetch(
+    "https://api.scryfall.com/cards/43224e74-2c51-40bd-bc34-f66e990a3e33"
+  )
+    .then((res) => res.json() as Promise<TCard>)
+    .then((data) => cardCollection.push(data));
+
   // const mowuTokens = await fetch(
   //   "https://api.scryfall.com/cards/b10441dd-9029-4f95-9566-d3771ebd36bd"
   // )

@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export const Footer = () => {
   return (
@@ -13,30 +12,35 @@ export const Footer = () => {
             height={36}
             width={36}
             alt="The Dogs of Magic of the Gathering Logo"
+            priority
           />
         </Link>
         <div className="my-auto">
           <h2 className="text-sm font-semibold text-[#333545] hover:text-[#3e4153] md:text-base">
-            <a href="https://www.bermeo.dev">Developed by Guilherme Bermeo</a>
+            <Link href="https://www.bermeo.dev">
+              Developed by Guilherme Bermeo
+            </Link>
           </h2>
         </div>
         <div className="flex justify-end gap-x-4 md:gap-x-6">
-          <a href="https://github.com/GMBermeo">
+          <Link href="https://github.com/GMBermeo">
             <Image
               src="/social/github.svg"
               height={36}
               width={36}
               alt="Github Invertocat Logo"
+              priority
             />
-          </a>
-          <a href="https://www.linkedin.com/in/gmbermeo/">
+          </Link>
+          <Link href="https://www.linkedin.com/in/gmbermeo/">
             <Image
               src="/social/linkedin.svg"
               height={36}
               width={36}
               alt="Linkedin Logo"
+              priority
             />
-          </a>
+          </Link>
         </div>
       </div>
       <p className="mt-0 hidden text-center text-xs text-[#282a36] lg:block">

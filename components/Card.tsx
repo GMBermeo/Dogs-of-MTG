@@ -1,6 +1,5 @@
 import React from "react";
 import { CardImage } from "./Card/CardImage";
-import { ArtCrop } from "./Card/ArtCrop";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
 import { OtherPrints } from "./Card/OtherPrints";
@@ -52,43 +51,7 @@ export const Card = ({ card }: { card: TCard }) => {
       />
       <div className="mb-2 flex flex-col gap-y-2">
         <h4 className="text-center font-bold">{card.set_name}</h4>
-        {/* <CardTags
-          full_art={card.full_art}
-          promo={card.promo}
-          reprint={card.reprint}
-          variation={card.variation}
-          frame={card.frame}
-        /> */}
       </div>
-      {/* {prints.length >= 2 && (
-        <ArtCrop
-          id={card.id}
-          artCrop={card.image_uris.art_crop}
-          large={card.image_uris.large}
-          name={card.name}
-          artist={card.artist}
-          frame={card.frame}
-        />
-      )}
-      {prints.length === 1 ? (
-        <>
-          <CardImage
-            png={card.image_uris.png}
-            large={card.image_uris.large}
-            id={card.id}
-            name={card.name}
-            artist={card.artist}
-            frame={card.frame}
-            flavor_text={card?.flavor_text}
-          />
-          <h4 className="text-center font-bold">{card.set_name}</h4>
-        </>
-      ) : (
-        <>
-          <h4 className="font-bold">{card.set_name}</h4>
-          <OtherPrints prints={prints} />
-        </>
-      )} */}
     </Link>
   );
 };
