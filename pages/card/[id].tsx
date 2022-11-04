@@ -31,14 +31,14 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
     <>
       <Head>
         <title>
-          {`${card?.name} (${card?.frame}) - The Doggos of Magic the Gathering`}
+          {`${card?.name} (${card?.released_at}) - The Dogs of Magic the Gathering`}
         </title>
         <meta
           name="description"
           content={
             card?.flavor_text
-              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.frame})`
-              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.frame})`
+              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.released_at})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
           }
         />
       </Head>
@@ -59,7 +59,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                 promo={card?.promo}
                 reprint={card?.reprint}
                 variation={card?.variation}
-                frame={card?.frame}
+                frame={card?.released_at}
               />
             </div>
           </div>
@@ -81,7 +81,12 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           </div>
           <div className="p-4 text-lg">
             <p className="mb-2 text-sm text-slate-300">{card?.oracle_text}</p>
-            <p className="italic">{card?.flavor_text ?? ""}</p>
+            <p
+              className="italic"
+              dangerouslySetInnerHTML={{
+                __html: card?.flavor_text ?? "",
+              }}
+            />
           </div>
 
           <div className="mb-4 flex justify-between">

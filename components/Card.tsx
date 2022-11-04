@@ -36,7 +36,7 @@ export const Card = ({ card }: { card: TCard }) => {
           promo={card.promo}
           reprint={card.reprint}
           variation={card.variation}
-          frame={card.frame}
+          frame={card.released_at}
         />
       </div>
       <CardImage
@@ -46,7 +46,7 @@ export const Card = ({ card }: { card: TCard }) => {
         id={card.id}
         name={card.name}
         artist={card.artist}
-        frame={card.frame}
+        frame={card.released_at}
         flavor_text={card?.flavor_text}
       />
       <div className="mb-2 flex flex-col gap-y-2">

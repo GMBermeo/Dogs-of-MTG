@@ -29,7 +29,7 @@ export const OtherPrints = ({ prints }: OtherPrintsProps) => {
               id={print.id}
               name={print.name}
               artist={print.artist}
-              frame={print.frame}
+              frame={print.released_at}
             />
             <p>{print.set_name}</p>
             <p>{print.released_at}</p>
