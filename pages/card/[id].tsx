@@ -59,7 +59,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
         />
         <meta
           property="og:url"
-          content={`https://dogs-of-mtg.bermeo.dev/card/${card.id}`}
+          content={`https://dogs-of-mtg.bermeo.dev/card/${card?.id}`}
         />
         <meta property="og:locale" content="en_US" />
       </Head>
