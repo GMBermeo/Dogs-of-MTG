@@ -41,6 +41,24 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
           }
         />
+        <meta
+          property="og:title"
+          content={`${card?.name} (${card?.released_at}) - The Dogs of Magic the Gathering`}
+        />
+        <meta
+          property="og:description"
+          content={
+            card?.flavor_text
+              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.released_at})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
+          }
+        />
+        <meta property="og:image" content={card.image_uris.art_crop} />
+        <meta
+          property="og:url"
+          content={`https://dogs-of-mtg.bermeo.dev/card/${card.id}`}
+        />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <div className="mx-auto mb-2 max-w-2xl md:mt-4">
         <div className="row-end-auto m-0 rounded-none bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none md:rounded-lg">

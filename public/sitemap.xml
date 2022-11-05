@@ -4,6 +4,7 @@
       <loc>https://dogs-of-mtg.bermeo.dev</loc>
       <image:image>
          <image:loc>https://dogs-of-mtg.bermeo.dev/Logo.svg</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
          <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
       </image:image>
    </url>
@@ -11,13 +12,16 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/22dde654-5bde-47f9-8e90-4f38dddc07b3</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/4742800a-4872-4c2d-b884-01e0ba16950c</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/8476adaa-fd09-41c3-beda-0e2d654cb204</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/f7c29dab-5cd4-4158-9a12-f14004e08484</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/a8b85603-0ac6-4587-9724-e35ac06ffab9</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/1778cf9a-2703-41e9-86d7-ec21af8cf61d</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/d9633151-d704-42a4-b1c6-66446bf48bee</loc>
@@ -26,13 +30,16 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/c059e4b4-1542-4b5c-810a-9f0abac5792b</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/6736fe71-bd55-4602-b0aa-ece6193048a9</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/b4fbaee3-a10f-4b2d-b07e-d041a96a7e27</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/5aa91a9e-2fe2-43bc-aa9c-cfb8a71829ff</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/aa409269-3698-42a2-8c51-75557b27a6f6</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/84dcd364-38c1-4987-a066-1c4d4533912e</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/45ea5ead-9fd8-4909-96aa-d4e970891c93</loc>
@@ -41,13 +48,25 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/d6ecab4b-fcff-4cf9-8e26-f3c609179050</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/f887f114-68e8-45ce-89e1-3bc10b94db01</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/27fd571b-8316-4c60-a042-8bcf4816b126</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/4fcf1082-25ac-4537-9fd9-631f834097ad</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/f408c5e4-e18d-4e4d-959a-f41df4c3019c</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/cc040492-7fb7-4fdb-aafe-8179e5f2b28c</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/ce3c0bd9-8a37-4164-9937-f35d1c210fe8</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/b56d6402-a941-46cc-b1d6-352d5aa5cc3f</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/881175c4-fee5-4c39-ad25-145ef73569ce</loc>
@@ -65,19 +84,10 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/21de4a01-98d3-4af3-9c6e-29e16d2c1767</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/b5757230-08b8-4808-af61-d343f9748fb1</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/3a5ad1c8-3d70-43ed-9539-2aa6289c5c4a</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/a2b4cbb7-c9ad-4320-9322-a6a3afbc4a50</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/6afead32-3542-44c4-82d6-b6a81beb9f90</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/0291a964-1117-4fbd-9193-9719b273c348</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/f762546c-f5eb-420d-a8f7-c3566cd8f506</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/ab4eb490-acd0-4162-8e8a-7e7ff003d0f3</loc>
@@ -86,13 +96,19 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/f8c10c77-1446-4581-9587-dc2860fe78fe</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/7be82997-ad17-4977-b3a9-099889fb0aa3</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/ec4ebe97-730c-43bb-86da-6ef0b34c104b</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/d605c780-a42a-4816-8fb9-63e3114a8246</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/d2bfec5d-3182-415a-afe8-0b5511cfd656</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/91d3e366-4da5-42c8-bbd5-a0c178c0da28</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/9f8cf3f9-4e3b-4af2-b5ef-a97eb1d2b674</loc>
@@ -110,19 +126,16 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/c392a7e5-6ff5-4c2f-9590-f8811a724f44</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/4f8107b3-8539-4b9c-8d0d-c512c940838f</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/066c8f63-52e6-475e-8d27-6ee37e92fc05</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/2cf4a081-3532-45e5-be72-1ff2fb88bb08</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/dbc0d2c3-8060-4155-b10e-d641648a4e6b</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/a6ee5698-1a40-434c-937b-9462825a752b</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/a04eef82-fd53-41f4-9c7e-28b9ac039032</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/db1a9d18-93ae-4ff9-99dd-569cf2e9f62a</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/39934090-36a6-4183-9176-97ea932d2685</loc>
@@ -137,22 +150,13 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/56d86909-b7f3-4a46-9904-e173853b79f1</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/4d5be4ab-f85a-4272-ac08-99cb0105eb11</loc>
-   </url>
-   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/a85747dd-84c0-4e31-964e-c455c96f87bf</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/2f7e5122-89ff-4a25-96a5-fee5f96da7f2</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/b57d518c-21bb-4451-8248-9ee838460c09</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/95179b31-8cb5-4dd9-ad93-782b8774534d</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/cd970484-49b3-442a-806a-cabc56526ee1</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/71eae1cf-f7e8-4281-a50c-fc4b728d23dd</loc>
@@ -167,10 +171,16 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/bf0f72e0-1254-4bfb-b405-d64012dc171a</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/5d19c5fb-01af-4ca4-af7e-00ec2a748afd</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/0fc37615-ef72-4176-9e94-080e56af1d8a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/8980efa5-bd21-4980-91a7-5e66528b1011</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/0f4b9943-0fe6-4383-90a0-4a719dcf9499</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/332769b1-1eb5-4c77-8317-27addc28650b</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/861f215b-4f3b-4aca-9664-3ef9a0ddea1a</loc>
@@ -179,10 +189,16 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/56c1111a-9680-4d34-8cf7-af16ae508a72</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/ac0a7410-493c-4c99-99e2-b8e1116622e8</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/3a4c8964-06e4-4a24-9a7e-9cac0fb8518e</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/a6db26b5-d28c-4524-9347-eec412d584bc</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/5635c8f2-164c-4a13-965a-9432d07092ed</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/c361ea9c-a989-4ded-8b2c-f565aa9d8a1d</loc>
@@ -191,10 +207,19 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/219c4ab2-1f7c-469b-a72a-d435213f130c</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/9c90a983-16bf-46e7-924f-f653bcef8f23</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/6e8abee6-87e6-4d1a-a117-aeb8122c5199</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/dd9edd62-dc18-4887-a020-4464e31b79c2</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/0ff9400d-4842-471f-bf7e-3b21df352e0a</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/22d2a844-17fc-4628-9591-684555e98f7b</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/eb00bd3a-833e-4226-a73e-17c9043c0994</loc>
@@ -218,9 +243,6 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/f8d2f75c-ef2a-4d30-86d1-c47307fc47ac</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/f98318dc-8ba5-4a33-b4a6-c36add8aa80e</loc>
-   </url>
-   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/ffd0d63a-d947-4ce4-8e34-5c1521955b18</loc>
    </url>
    <url>
@@ -236,10 +258,10 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/0fe68bce-6207-4fd1-9e82-a18fd2d6ddca</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/16db28f4-3d96-42f5-a264-592fdc2d4196</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/900ff07e-e5d2-4fe6-ad1a-d0d7e1a272ea</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/27194865-1305-4fbd-8d84-c5201ad0210e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/16db28f4-3d96-42f5-a264-592fdc2d4196</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/abbaf916-067d-4834-a55c-b400fe0d8c1f</loc>
@@ -260,19 +282,34 @@
       <loc>https://dogs-of-mtg.bermeo.dev/card/9c6e19a1-b9ea-4724-96d6-63c4b4967257</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/85623f54-1c18-4b1e-a8da-df66de3832a6</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/8f975874-24a6-4a14-bc5c-898c3d8e90e5</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/6d6b2c8a-8019-4e4b-8f4e-058ab5284153</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/544fba3c-0db4-4ac3-ac70-ae9a5468ab5d</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/132551d3-ef8e-4ed0-a363-53db4f0621f0</loc>
    </url>
    <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/e1f75b44-01a3-47f6-96c9-9ce327111e64</loc>
+   </url>
+   <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/06732c6f-c3b5-4c68-82a0-655cffff79db</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/520fcafe-0c4a-49ca-8138-57a60506b0cd</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/dc4dabd2-2d1c-44e6-80a7-67e0af9bf468</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/cf83d5c7-a17c-4350-9432-92a01421b39a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/2e7f9919-0713-4ef9-96eb-3e0c444e47f4</loc>
+   </url>
+   <url>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/5bb8dd5c-a79a-4afc-80b2-64645bb17a34</loc>
    </url>
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/7be2da24-a0cd-4e90-bc29-4da649fa56bf</loc>
@@ -280,336 +317,311 @@
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/634b2b46-b213-4eb0-81d8-0e9dd161b85f</loc>
    </url>
+
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/9216e73b-56ef-48b9-a6a1-b370fb0d97c1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/8476adaa-fd09-41c3-beda-0e2d654cb204</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/e216a539-152b-4a83-98ef-1996182a5714</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f7c29dab-5cd4-4158-9a12-f14004e08484</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/ba32eee7-10ba-4f0b-8a87-c3ecfa22ae41</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/d9633151-d704-42a4-b1c6-66446bf48bee</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/2bbe0201-3df3-4d0c-8aa4-8f35f12c322c</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/c059e4b4-1542-4b5c-810a-9f0abac5792b</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/38c82a1d-5db1-4090-b446-cc5bc6dc811d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/6736fe71-bd55-4602-b0aa-ece6193048a9</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/baa1e796-809c-49af-a84e-ec088f7f48f8</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/b4fbaee3-a10f-4b2d-b07e-d041a96a7e27</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/cc61aa62-25ee-40a4-9b6e-d6277316b464</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/5aa91a9e-2fe2-43bc-aa9c-cfb8a71829ff</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/6b9cebd8-aa3f-4e22-8d15-d4b7bad355e4</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/84dcd364-38c1-4987-a066-1c4d4533912e</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/7c7811e2-8bff-44a9-96bf-8e302c3cade9</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/45ea5ead-9fd8-4909-96aa-d4e970891c93</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/d5066b1b-3910-4434-83d6-030851f20bcf</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/d6ecab4b-fcff-4cf9-8e26-f3c609179050</loc>
    </url>
-   
-   <!-- en-US -->
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f7c29dab-5cd4-4158-9a12-f14004e08484</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f887f114-68e8-45ce-89e1-3bc10b94db01</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a8b85603-0ac6-4587-9724-e35ac06ffab9</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/27fd571b-8316-4c60-a042-8bcf4816b126</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/1778cf9a-2703-41e9-86d7-ec21af8cf61d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/4fcf1082-25ac-4537-9fd9-631f834097ad</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d9633151-d704-42a4-b1c6-66446bf48bee</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f408c5e4-e18d-4e4d-959a-f41df4c3019c</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/c059e4b4-1542-4b5c-810a-9f0abac5792b</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/cc040492-7fb7-4fdb-aafe-8179e5f2b28c</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/b4fbaee3-a10f-4b2d-b07e-d041a96a7e27</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/ce3c0bd9-8a37-4164-9937-f35d1c210fe8</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/5aa91a9e-2fe2-43bc-aa9c-cfb8a71829ff</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/b56d6402-a941-46cc-b1d6-352d5aa5cc3f</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/aa409269-3698-42a2-8c51-75557b27a6f6</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/881175c4-fee5-4c39-ad25-145ef73569ce</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/45ea5ead-9fd8-4909-96aa-d4e970891c93</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f7da32a3-8e33-4603-abd2-8db144062f6a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d6ecab4b-fcff-4cf9-8e26-f3c609179050</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a5b1ac05-bd87-4605-8443-0469276e1e3a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/27fd571b-8316-4c60-a042-8bcf4816b126</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/4a82b032-b1ba-456c-abab-c0f7430b0587</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f408c5e4-e18d-4e4d-959a-f41df4c3019c</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/21de4a01-98d3-4af3-9c6e-29e16d2c1767</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/cc040492-7fb7-4fdb-aafe-8179e5f2b28c</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/b5757230-08b8-4808-af61-d343f9748fb1</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/881175c4-fee5-4c39-ad25-145ef73569ce</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/3a5ad1c8-3d70-43ed-9539-2aa6289c5c4a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f7da32a3-8e33-4603-abd2-8db144062f6a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/ab4eb490-acd0-4162-8e8a-7e7ff003d0f3</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a5b1ac05-bd87-4605-8443-0469276e1e3a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f8c10c77-1446-4581-9587-dc2860fe78fe</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/4a82b032-b1ba-456c-abab-c0f7430b0587</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/21de4a01-98d3-4af3-9c6e-29e16d2c1767</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/7be82997-ad17-4977-b3a9-099889fb0aa3</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/3a5ad1c8-3d70-43ed-9539-2aa6289c5c4a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/ec4ebe97-730c-43bb-86da-6ef0b34c104b</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a2b4cbb7-c9ad-4320-9322-a6a3afbc4a50</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/d605c780-a42a-4816-8fb9-63e3114a8246</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/6afead32-3542-44c4-82d6-b6a81beb9f90</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/d2bfec5d-3182-415a-afe8-0b5511cfd656</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/0291a964-1117-4fbd-9193-9719b273c348</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/9f8cf3f9-4e3b-4af2-b5ef-a97eb1d2b674</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f762546c-f5eb-420d-a8f7-c3566cd8f506</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/6911759c-7177-402c-a95a-f9f46efaf521</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/ab4eb490-acd0-4162-8e8a-7e7ff003d0f3</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/3f602ecc-c264-4f3e-adeb-d0186668653e</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f8c10c77-1446-4581-9587-dc2860fe78fe</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a8b94bc1-68d1-41dc-914c-a33ecb9aeb49</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d605c780-a42a-4816-8fb9-63e3114a8246</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/c392a7e5-6ff5-4c2f-9590-f8811a724f44</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d2bfec5d-3182-415a-afe8-0b5511cfd656</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/4f8107b3-8539-4b9c-8d0d-c512c940838f</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/91d3e366-4da5-42c8-bbd5-a0c178c0da28</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/066c8f63-52e6-475e-8d27-6ee37e92fc05</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/9f8cf3f9-4e3b-4af2-b5ef-a97eb1d2b674</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a6ee5698-1a40-434c-937b-9462825a752b</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/6911759c-7177-402c-a95a-f9f46efaf521</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a04eef82-fd53-41f4-9c7e-28b9ac039032</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/3f602ecc-c264-4f3e-adeb-d0186668653e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/39934090-36a6-4183-9176-97ea932d2685</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a8b94bc1-68d1-41dc-914c-a33ecb9aeb49</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f41a191c-c42e-42ec-89bd-cc1bc215ffbc</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/c392a7e5-6ff5-4c2f-9590-f8811a724f44</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/b9e03567-c95a-40b8-a75a-971076093f57</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/066c8f63-52e6-475e-8d27-6ee37e92fc05</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/56d86909-b7f3-4a46-9904-e173853b79f1</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/2cf4a081-3532-45e5-be72-1ff2fb88bb08</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a85747dd-84c0-4e31-964e-c455c96f87bf</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/dbc0d2c3-8060-4155-b10e-d641648a4e6b</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/b57d518c-21bb-4451-8248-9ee838460c09</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a04eef82-fd53-41f4-9c7e-28b9ac039032</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/95179b31-8cb5-4dd9-ad93-782b8774534d</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/db1a9d18-93ae-4ff9-99dd-569cf2e9f62a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/71eae1cf-f7e8-4281-a50c-fc4b728d23dd</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/39934090-36a6-4183-9176-97ea932d2685</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/760e482c-8725-410e-9d9f-c377649fe8bb</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f41a191c-c42e-42ec-89bd-cc1bc215ffbc</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/6fe64569-c1b6-4bd4-a742-6ee46ea5181c</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/b9e03567-c95a-40b8-a75a-971076093f57</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/bf0f72e0-1254-4bfb-b405-d64012dc171a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/56d86909-b7f3-4a46-9904-e173853b79f1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/5d19c5fb-01af-4ca4-af7e-00ec2a748afd</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/4d5be4ab-f85a-4272-ac08-99cb0105eb11</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/0fc37615-ef72-4176-9e94-080e56af1d8a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a85747dd-84c0-4e31-964e-c455c96f87bf</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/0f4b9943-0fe6-4383-90a0-4a719dcf9499</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/2f7e5122-89ff-4a25-96a5-fee5f96da7f2</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/332769b1-1eb5-4c77-8317-27addc28650b</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/b57d518c-21bb-4451-8248-9ee838460c09</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/861f215b-4f3b-4aca-9664-3ef9a0ddea1a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/95179b31-8cb5-4dd9-ad93-782b8774534d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/56c1111a-9680-4d34-8cf7-af16ae508a72</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/cd970484-49b3-442a-806a-cabc56526ee1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/ac0a7410-493c-4c99-99e2-b8e1116622e8</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/71eae1cf-f7e8-4281-a50c-fc4b728d23dd</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/3a4c8964-06e4-4a24-9a7e-9cac0fb8518e</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/760e482c-8725-410e-9d9f-c377649fe8bb</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/a6db26b5-d28c-4524-9347-eec412d584bc</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/6fe64569-c1b6-4bd4-a742-6ee46ea5181c</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/5635c8f2-164c-4a13-965a-9432d07092ed</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/bf0f72e0-1254-4bfb-b405-d64012dc171a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/c361ea9c-a989-4ded-8b2c-f565aa9d8a1d</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/0fc37615-ef72-4176-9e94-080e56af1d8a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/219c4ab2-1f7c-469b-a72a-d435213f130c</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/8980efa5-bd21-4980-91a7-5e66528b1011</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/9c90a983-16bf-46e7-924f-f653bcef8f23</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/861f215b-4f3b-4aca-9664-3ef9a0ddea1a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/6e8abee6-87e6-4d1a-a117-aeb8122c5199</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/56c1111a-9680-4d34-8cf7-af16ae508a72</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/dd9edd62-dc18-4887-a020-4464e31b79c2</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/3a4c8964-06e4-4a24-9a7e-9cac0fb8518e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/0ff9400d-4842-471f-bf7e-3b21df352e0a</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/a6db26b5-d28c-4524-9347-eec412d584bc</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/22d2a844-17fc-4628-9591-684555e98f7b</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/c361ea9c-a989-4ded-8b2c-f565aa9d8a1d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/eb00bd3a-833e-4226-a73e-17c9043c0994</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/219c4ab2-1f7c-469b-a72a-d435213f130c</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/2ad996e5-f3b4-4aca-8b37-d20632245b4e</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/dd9edd62-dc18-4887-a020-4464e31b79c2</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/d7a26c23-abb9-41c3-aea1-bb241093119d</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/0ff9400d-4842-471f-bf7e-3b21df352e0a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f2e73e06-d708-41dc-b20c-1f71651230e1</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/eb00bd3a-833e-4226-a73e-17c9043c0994</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/7e21938b-46b1-4b2f-8269-0cd0e998cddc</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/2ad996e5-f3b4-4aca-8b37-d20632245b4e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/3a078c3d-88db-4459-9667-ce610ae2f660</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d7a26c23-abb9-41c3-aea1-bb241093119d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/f8d2f75c-ef2a-4d30-86d1-c47307fc47ac</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f2e73e06-d708-41dc-b20c-1f71651230e1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/ffd0d63a-d947-4ce4-8e34-5c1521955b18</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/7e21938b-46b1-4b2f-8269-0cd0e998cddc</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/27a3bfb6-3843-4bda-bbcb-905e4b351dea</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/3a078c3d-88db-4459-9667-ce610ae2f660</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/bb36840a-3f85-4fca-87ab-379dfce8e542</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f8d2f75c-ef2a-4d30-86d1-c47307fc47ac</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/102e48e0-8a5f-499d-ac62-005d3c075ef3</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/f98318dc-8ba5-4a33-b4a6-c36add8aa80e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/0fe68bce-6207-4fd1-9e82-a18fd2d6ddca</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/ffd0d63a-d947-4ce4-8e34-5c1521955b18</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/900ff07e-e5d2-4fe6-ad1a-d0d7e1a272ea</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/27a3bfb6-3843-4bda-bbcb-905e4b351dea</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/16db28f4-3d96-42f5-a264-592fdc2d4196</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/bb36840a-3f85-4fca-87ab-379dfce8e542</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/abbaf916-067d-4834-a55c-b400fe0d8c1f</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/102e48e0-8a5f-499d-ac62-005d3c075ef3</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/3cae1f40-0e43-41d8-bc5c-aa9873f7d7d5</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/0fe68bce-6207-4fd1-9e82-a18fd2d6ddca</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/55d54f08-53f0-41b2-8b86-8244515224eb</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/16db28f4-3d96-42f5-a264-592fdc2d4196</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/2a54115f-150a-4ae2-a5c7-20e2ba884dd1</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/27194865-1305-4fbd-8d84-c5201ad0210e</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/c2889bba-58a8-46e1-959c-0fd38c1732f9</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/abbaf916-067d-4834-a55c-b400fe0d8c1f</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/9c6e19a1-b9ea-4724-96d6-63c4b4967257</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/3cae1f40-0e43-41d8-bc5c-aa9873f7d7d5</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/85623f54-1c18-4b1e-a8da-df66de3832a6</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/55d54f08-53f0-41b2-8b86-8244515224eb</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/8f975874-24a6-4a14-bc5c-898c3d8e90e5</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/2a54115f-150a-4ae2-a5c7-20e2ba884dd1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/6d6b2c8a-8019-4e4b-8f4e-058ab5284153</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/c2889bba-58a8-46e1-959c-0fd38c1732f9</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/544fba3c-0db4-4ac3-ac70-ae9a5468ab5d</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/9c6e19a1-b9ea-4724-96d6-63c4b4967257</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/132551d3-ef8e-4ed0-a363-53db4f0621f0</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/544fba3c-0db4-4ac3-ac70-ae9a5468ab5d</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/e1f75b44-01a3-47f6-96c9-9ce327111e64</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/132551d3-ef8e-4ed0-a363-53db4f0621f0</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/06732c6f-c3b5-4c68-82a0-655cffff79db</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/06732c6f-c3b5-4c68-82a0-655cffff79db</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/dc4dabd2-2d1c-44e6-80a7-67e0af9bf468</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/520fcafe-0c4a-49ca-8138-57a60506b0cd</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/2e7f9919-0713-4ef9-96eb-3e0c444e47f4</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/cf83d5c7-a17c-4350-9432-92a01421b39a</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/5bb8dd5c-a79a-4afc-80b2-64645bb17a34</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/7be2da24-a0cd-4e90-bc29-4da649fa56bf</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/7be2da24-a0cd-4e90-bc29-4da649fa56bf</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/634b2b46-b213-4eb0-81d8-0e9dd161b85f</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/634b2b46-b213-4eb0-81d8-0e9dd161b85f</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/9216e73b-56ef-48b9-a6a1-b370fb0d97c1</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/22dde654-5bde-47f9-8e90-4f38dddc07b3</loc>
    </url>
    <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/e216a539-152b-4a83-98ef-1996182a5714</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/ba32eee7-10ba-4f0b-8a87-c3ecfa22ae41</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/2bbe0201-3df3-4d0c-8aa4-8f35f12c322c</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/38c82a1d-5db1-4090-b446-cc5bc6dc811d</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/baa1e796-809c-49af-a84e-ec088f7f48f8</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/cc61aa62-25ee-40a4-9b6e-d6277316b464</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/6b9cebd8-aa3f-4e22-8d15-d4b7bad355e4</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/7c7811e2-8bff-44a9-96bf-8e302c3cade9</loc>
-   </url>
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/d5066b1b-3910-4434-83d6-030851f20bcf</loc>
+      <loc>https://dogs-of-mtg.bermeo.dev/card/en-US/4742800a-4872-4c2d-b884-01e0ba16950c</loc>
    </url>
 </urlset>
