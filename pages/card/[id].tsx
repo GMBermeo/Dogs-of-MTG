@@ -53,7 +53,10 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
           }
         />
-        <meta property="og:image" content={card.image_uris.art_crop} />
+        <meta
+          property="og:image"
+          content={card?.image_uris.art_crop ?? card?.image_uris.large}
+        />
         <meta
           property="og:url"
           content={`https://dogs-of-mtg.bermeo.dev/card/${card.id}`}
