@@ -1,4 +1,3 @@
-import { ImageUris } from "@/types/TCard";
 import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";

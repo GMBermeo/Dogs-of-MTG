@@ -1,9 +1,9 @@
-import { TCard } from "@/types/TCard";
+import { TCardResponse } from "@/types/TCard";
 import { TList } from "@/types/TList";
 
 export async function loadCardPrints(
   prints_search_uri: string
-): Promise<TCard[]> {
+): Promise<TCardResponse[]> {
   const res = await fetch(prints_search_uri);
   const cardPrints = (await res.json()) as TList;
 

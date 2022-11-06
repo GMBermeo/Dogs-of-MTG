@@ -9,7 +9,6 @@ export const CardTags = ({
   promo,
   reprint,
   variation,
-  frame,
 }: CardTagsProps) => {
   if (!full_art && !promo && !reprint && !variation)
     return (

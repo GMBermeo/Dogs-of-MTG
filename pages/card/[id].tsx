@@ -17,7 +17,7 @@ type CardPageProps = {
 };
 
 const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
-  // console.log(prints);
+  // console.log(getAllCardsIds());
   const quantidade = prints?.length;
 
   const columns =
@@ -84,10 +84,13 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               />
             </div>
           </div>
-          <Link href={card?.image_uris.art_crop ?? ""}>
+          <Link
+            href={card?.image_uris.art_crop}
+            className="hover:cursor-zoom-in"
+          >
             <Image
               className="my-4 min-w-full rounded"
-              src={card?.image_uris.art_crop ?? card?.image_uris.large}
+              src={card?.image_uris.art_crop}
               alt={card?.name}
               width={624}
               height={455.5}
@@ -131,10 +134,13 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                 {prints.map((print: TCard) => (
                   <div
                     className="mb-2 text-center text-xs font-bold"
-                    key={print.id}
+                    key={print.id + print.released_at + print.image_uris.small}
                   >
                     <div>
-                      <Link href={print.image_uris.large}>
+                      <Link
+                        href={print.image_uris.large}
+                        className="hover:cursor-zoom-in"
+                      >
                         <Image
                           className="mb-1"
                           src={print.image_uris.png}
@@ -145,10 +151,10 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                           placeholder="blur"
                         />
                       </Link>
-                      <Link href={print.related_uris.gatherer ?? ""}>
+                      <a href={print.related_uris.gatherer ?? ""}>
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 ))}

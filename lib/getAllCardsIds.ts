@@ -1,4 +1,4 @@
-import { TCard } from "@/types/TCard";
+import { TCard, TCardResponse } from "@/types/TCard";
 import { loadCardPrints } from "./loadCardPrints";
 import { loadCards } from "./loadCards";
 
@@ -7,9 +7,8 @@ interface PathParams {
 }
 
 export async function getAllCardsIds() {
-  // eslint-disable-next-line prefer-const
-  let allCards: PathParams[] = [];
-  const allCardsUnformated: TCard[] = [];
+  const allCards: PathParams[] = [];
+  // const allCardsUnformated: TCardResponse[] = [];
   const data: TCard[] = await loadCards();
 
   // async function getPrints(card: TCard) {
@@ -36,6 +35,8 @@ export async function getAllCardsIds() {
 
   // data.map((card) => getPrints(card));
   // allCardsPath = data;
+
+  // console.log(allCards);
 
   return allCards;
   // return allCards.map((card) => {

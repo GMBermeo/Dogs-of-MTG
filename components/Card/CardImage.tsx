@@ -8,7 +8,7 @@ type CardImageProps = {
   name: string;
   artist: string;
   frame: string;
-  flavor_text?: string;
+  flavor_text: string | null;
   small: string;
 };
 
@@ -22,10 +22,10 @@ export const CardImage = ({
   flavor_text,
   small,
 }: CardImageProps) => {
-  function enlarge(e: { preventDefault: () => void }) {
-    e.preventDefault();
-    window.open(large, "_blank");
-  }
+  // function enlarge(e: { preventDefault: () => void }) {
+  //   e.preventDefault();
+  //   window.open(large, "_blank");
+  // }
 
   return (
     // <div className="relative h-full w-full">
@@ -33,7 +33,6 @@ export const CardImage = ({
       className="my-2 w-full cursor-pointer rounded-xl px-1 print:block print:w-[220px] print:rounded-none"
       src={png}
       alt={`${name} - ${artist} (${frame}) ${flavor_text ? flavor_text : ""}`}
-      onClick={enlarge}
       blurDataURL={small}
       placeholder="blur"
       width={678}
