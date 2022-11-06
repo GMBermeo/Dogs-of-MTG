@@ -1,8 +1,8 @@
 import { TCard, TCardResponse } from "@/types/TCard";
-import { loadCardPrints } from "./loadCardPrints";
+import { loadCardPrints } from "./loadCard";
 import { loadCards } from "./loadCards";
 
-interface PathParams {
+export interface PathParams {
   params: { id: string };
 }
 

@@ -3,7 +3,7 @@ import { CardImage } from "./Card/CardImage";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
 import { OtherPrints } from "./Card/OtherPrints";
-import { loadCardPrints } from "@/lib/loadCardPrints";
+import { loadCardPrints } from "@/lib/loadCard";
 import { TCard } from "@/types/TCard";
 import Link from "next/link";
 

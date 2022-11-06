@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -6,8 +6,7 @@ import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
-import { loadCard } from "@/lib/loadCard";
-import { loadCardPrints } from "@/lib/loadCardPrints";
+import { loadCard, loadCardPrints } from "@/lib/loadCard";
 import { TCard } from "@/types/TCard";
 import { PaintBrushIcon } from "@heroicons/react/20/solid";
 
@@ -31,26 +30,40 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
     <>
       <Head>
         <title>
-          {`${card?.name} (${card?.released_at}) - The Dogs of Magic the Gathering`}
+          {`${card?.name} (${card?.released_at.slice(
+            0,
+            4
+          )}) - The Dogs of Magic the Gathering`}
         </title>
         <meta
           name="description"
           content={
             card?.flavor_text
-              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.released_at})`
-              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
+              ? `${card?.flavor_text}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
           }
         />
         <meta
           property="og:title"
-          content={`${card?.name} (${card?.released_at}) - The Dogs of Magic the Gathering`}
+          content={`${card?.name} (${card?.released_at.slice(
+            0,
+            4
+          )}) - The Dogs of Magic the Gathering`}
         />
         <meta
           property="og:description"
           content={
             card?.flavor_text
-              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.released_at})`
-              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.released_at})`
+              ? `${card?.flavor_text}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
           }
         />
         <meta
@@ -80,12 +93,11 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                 promo={card?.promo}
                 reprint={card?.reprint}
                 variation={card?.variation}
-                frame={card?.released_at}
               />
             </div>
           </div>
           <Link
-            href={card?.image_uris.art_crop}
+            href={card?.image_uris.art_crop ?? "/"}
             className="hover:cursor-zoom-in"
           >
             <Image
@@ -138,20 +150,20 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                   >
                     <div>
                       <Link
-                        href={print.image_uris.large}
+                        href={print.image_uris?.large ?? "/"}
                         className="hover:cursor-zoom-in"
                       >
                         <Image
                           className="mb-1"
-                          src={print.image_uris.png}
+                          src={print.image_uris?.png}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
                           width={672}
                           height={936}
-                          blurDataURL={print.image_uris.small}
+                          blurDataURL={print.image_uris?.small}
                           placeholder="blur"
                         />
                       </Link>
-                      <a href={print.related_uris.gatherer ?? ""}>
+                      <a href={print.related_uris?.gatherer ?? ""}>
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
                       </a>
@@ -170,15 +182,33 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
 export default CardPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const prints: TCard[] = [];
   const { id } = params!;
-  const card = await loadCard(id as string);
-  const printsResponse: TCard[] = await loadCardPrints(card?.prints_search_uri);
-  const stringifiedPrints = JSON.stringify(printsResponse);
-  const trimmedPrints = stringifiedPrints?.trim() || "";
-  const prints: TCard[] = await JSON.parse(trimmedPrints);
+  const card: TCard = await loadCard(id as string);
+  // const prints: TCard[] = [];
+  // const loadedPrints: TCard[] = await loadCardPrints(card?.prints_search_uri);
+
+  // loadedPrints.forEach((print: TCard) => {
+  //   prints.push(print);
+  // });
+
+  // const printsResponse: TCard[] = await loadCardPrints(card?.prints_search_uri);
+  // const stringifiedPrints = JSON?.stringify(printsResponse);
+  // const trimmedPrints = stringifiedPrints?.trim() || "";
+  // prints.push(await JSON?.parse(trimmedPrints));
+
   // printsResponse !== undefined
   //   ? JSON.parse(JSON.stringify(printsResponse))
   //   : undefined;
+
+  // export let endpoint;
+  // function getData(endpoint)
+  // {
+  //     return fetch(endpoint)
+  //         .then((d) => d.json());
+  // }
+
+  // endpoint && (data = getData(endpoint));
 
   return {
     props: { card, prints },

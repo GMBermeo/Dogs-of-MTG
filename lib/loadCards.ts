@@ -1,5 +1,6 @@
 import { TCard, TCardResponse, TDoubleFacedCardResponse } from "@/types/TCard";
 import { TList } from "@/types/TList";
+import { use } from "react";
 import { convertCard, convertDoubleFacedCard } from "./convertResponseToCard";
 
 export async function loadCards() {
@@ -11,8 +12,8 @@ export async function loadCards() {
   )
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
-      cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+      data.data.map((card: TCardResponse) =>
+        cardCollection.push(convertCard(card))
       )
     );
 
