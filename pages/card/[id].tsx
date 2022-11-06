@@ -182,9 +182,10 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
 export default CardPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const prints: TCard[] = [];
+  // const prints: TCard[] = [];
   const { id } = params!;
   const card: TCard = await loadCard(id as string);
+  const prints: TCard[] = await loadCardPrints(id as string);
   // const prints: TCard[] = [];
   // const loadedPrints: TCard[] = await loadCardPrints(card?.prints_search_uri);
 

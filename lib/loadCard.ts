@@ -26,13 +26,14 @@ export async function loadCard(id: string): Promise<TCard> {
 //   return cardPrints.data;
 // }
 
-export async function loadCardPrints(
-  prints_search_uri: string
-): Promise<TCard[]> {
+export async function loadCardPrints(id: string): Promise<TCard[]> {
+  const resParent = await fetch(`https://api.scryfall.com/cards/${id}`);
+  const cardResponse = (await resParent.json()) as TCardResponse;
+
   const cardPrints: TCard[] = [];
 
-  const res = await fetch(prints_search_uri);
-  const printsResponse: TList = (await res.json()) as any;
+  const res = await fetch(cardResponse.prints_search_uri);
+  const printsResponse: TList = (await res.json()) as TList;
   printsResponse?.data?.map((cardResponse: TCardResponse) => {
     cardPrints.push(convertCard(cardResponse));
   });
