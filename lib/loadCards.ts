@@ -12,7 +12,7 @@ export async function loadCards() {
   )
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
-      data.data.map((card: TCardResponse) =>
+      data?.data?.map((card: TCardResponse) =>
         cardCollection.push(convertCard(card))
       )
     );
@@ -38,7 +38,7 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
       cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+        ...data?.data?.map((card: TCardResponse) => convertCard(card))
       )
     );
 
@@ -63,7 +63,7 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
       cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+        ...data?.data?.map((card: TCardResponse) => convertCard(card))
       )
     );
 
@@ -74,7 +74,7 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
       cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+        ...data?.data?.map((card: TCardResponse) => convertCard(card))
       )
     );
 
@@ -85,7 +85,7 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
       cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+        ...data?.data?.map((card: TCardResponse) => convertCard(card))
       )
     );
 
@@ -96,7 +96,7 @@ export async function loadCards() {
     .then((res) => res.json() as Promise<TList>)
     .then((data) =>
       cardCollection.push(
-        ...data.data.map((card: TCardResponse) => convertCard(card))
+        ...data?.data?.map((card: TCardResponse) => convertCard(card))
       )
     );
 

@@ -28,7 +28,7 @@ export interface TCard {
   artist: string;
   collector_number: string;
   rarity: string;
-  oracle_text: string;
+  oracle_text: string | null;
   frame: string;
   related_uris: RelatedUris;
   all_parts: AllParts[] | null;

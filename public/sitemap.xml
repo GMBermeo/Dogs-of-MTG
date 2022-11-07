@@ -647,27 +647,6 @@
          <image:loc>https://cards.scryfall.io/small/front/e/b/eb8dae9a-dac2-4b80-b546-852b989bd8c1.jpg?1562209422</image:loc>
       </image:image>
    </url>
-
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/b10441dd-9029-4f95-9566-d3771ebd36bd</loc>
-      <image:image>
-         <image:loc>https://cards.scryfall.io/art_crop/front/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/large/front/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/png/front/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.png?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/small/front/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-      </image:image>
-   </url>
-
-   <url>
-      <loc>https://dogs-of-mtg.bermeo.dev/card/b10441dd-9029-4f95-9566-d3771ebd36bd</loc>
-      <image:image>
-         <image:loc>https://cards.scryfall.io/art_crop/back/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/large/back/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/png/back/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.png?1646537364</image:loc>
-         <image:loc>https://cards.scryfall.io/small/back/b/1/b10441dd-9029-4f95-9566-d3771ebd36bd.jpg?1646537364</image:loc>
-      </image:image>
-   </url>
-
    <url>
       <loc>https://dogs-of-mtg.bermeo.dev/card/b57d518c-21bb-4451-8248-9ee838460c09</loc>
       <image:image>

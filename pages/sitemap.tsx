@@ -23,6 +23,15 @@ const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
               <image:loc>${card.image_uris.png}</image:loc>
               <image:loc>${card.image_uris.small}</image:loc>
             </image:image>
+          </url>
+          <url>
+          <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/${card.id}</loc>
+            <image:image>
+              <image:loc>${card.image_uris.art_crop}</image:loc>
+              <image:loc>${card.image_uris.large}</image:loc>
+              <image:loc>${card.image_uris.png}</image:loc>
+              <image:loc>${card.image_uris.small}</image:loc>
+            </image:image>
           </url>`}
         </p>
       ))}
