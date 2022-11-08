@@ -1,6 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
-import { getAllCardsIds, PathParams } from "@/lib/getAllCardsIds";
 import { loadCards } from "@/lib/loadCards";
 import { TCard } from "@/types/TCard";
 

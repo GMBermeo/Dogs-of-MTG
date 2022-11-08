@@ -1,6 +1,5 @@
 import { Footer } from "@/components/common/Footer";
 import Document, { Html, Head, NextScript, Main } from "next/document";
-import Script from "next/script";
 
 class MyDocument extends Document {
   render() {

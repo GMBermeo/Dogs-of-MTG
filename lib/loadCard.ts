@@ -15,7 +15,17 @@ export interface TCardWithPrints {
 export async function loadCard(id: string): Promise<TCardWithPrints> {
   const cardResponse = await axios
     .get(`https://api.scryfall.com/cards/${id}`)
-    .then((res) => res.data as TCardResponse);
+    .then((res) => res.data as TCardResponse | TDoubleFacedCardResponse);
+
+  if (cardResponse.layout === "double_faced_token") {
+    const card = convertDoubleFacedCardToOne(
+      cardResponse as TDoubleFacedCardResponse
+    );
+    const prints = convertDoubleFacedCard(
+      cardResponse as TDoubleFacedCardResponse
+    );
+    return { card, prints };
+  }
 
   const printsResponse = await axios
     .get(
@@ -25,7 +35,7 @@ export async function loadCard(id: string): Promise<TCardWithPrints> {
     .then((data) => data?.data?.map((card) => convertCard(card)));
 
   const cardWithPrints: TCardWithPrints = {
-    card: convertCard(cardResponse),
+    card: convertCard(cardResponse as TCardResponse),
     prints: printsResponse,
   };
 

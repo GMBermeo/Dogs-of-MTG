@@ -16,16 +16,6 @@ export async function loadCards() {
     cardCollection.push(convertCard(card))
   );
 
-  // Dog Tokens
-  // const dogTokens = await axios
-  //   .get(
-  //     "https://api.scryfall.com/cards/search?q=t:dog t:token -is:digital in:paper unique:art -is:dfc -is:mdfc"
-  //   )
-  //   .then((res) => res.data as TList);
-  // dogTokens.data.map((card: TCardResponse) =>
-  //   cardCollection.push(convertCard(card))
-  // );
-
   // Jiang Yanggu
   const jiangYanggu = await axios
     .get(
@@ -103,14 +93,14 @@ export async function loadCards() {
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Mowu Double Faced Token
-  // const mowuDouble = await axios
-  //   .get("https://api.scryfall.com/cards/b10441dd-9029-4f95-9566-d3771ebd36bd")
-  //   .then((res) => res.data as TDoubleFacedCardResponse)
-  //   .then((data) =>
-  //     convertDoubleFacedCard(data).map((card: TCard) =>
-  //       cardCollection.push(card)
-  //     )
-  //   );
+  const mowuDouble = await axios
+    .get("https://api.scryfall.com/cards/b10441dd-9029-4f95-9566-d3771ebd36bd")
+    .then((res) => res.data as TDoubleFacedCardResponse)
+    .then((data) =>
+      convertDoubleFacedCard(data).map((card: TCard) =>
+        cardCollection.push(card)
+      )
+    );
 
   cardCollection.sort((a, b) => b.released_at?.localeCompare(a.released_at));
 

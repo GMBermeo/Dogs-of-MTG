@@ -1,4 +1,4 @@
-import { TCard, TCardResponse } from "@/types/TCard";
+import { TCard } from "@/types/TCard";
 // import { loadCardPrints } from "./loadCard";
 import { loadCards } from "./loadCards";
 

@@ -43,7 +43,7 @@ export interface TCardResponse extends TCard {
   lang: "en" | string;
   uri: string;
   scryfall_uri: string;
-  layout: "normal" | string;
+  layout: "normal" | "double_faced_token" | string;
   highres_image: boolean;
   image_status: "highres_scan" | string;
   mana_cost: string;

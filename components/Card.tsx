@@ -2,7 +2,6 @@ import React from "react";
 import { CardImage } from "./Card/CardImage";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
-import { OtherPrints } from "./Card/OtherPrints";
 import { TCard } from "@/types/TCard";
 import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
