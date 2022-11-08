@@ -91,3 +91,32 @@ export function convertDoubleFacedCard(
     },
   ];
 }
+
+export function convertDoubleFacedCardToOne(
+  doubleFacedCard: TDoubleFacedCardResponse
+): TCard {
+  return {
+    id: doubleFacedCard.id,
+    name: doubleFacedCard.name,
+    released_at: doubleFacedCard.released_at,
+    image_uris: doubleFacedCard.card_faces[0].image_uris,
+    flavor_text: doubleFacedCard.card_faces[0].flavor_name || null,
+    type_line: doubleFacedCard.type_line,
+    power: doubleFacedCard.card_faces[0].power || null,
+    toughness: doubleFacedCard.card_faces[0].toughness || null,
+    promo: doubleFacedCard.promo,
+    reprint: doubleFacedCard.reprint,
+    variation: doubleFacedCard.variation,
+    full_art: doubleFacedCard.full_art,
+    textless: doubleFacedCard.textless,
+    prints_search_uri: doubleFacedCard.prints_search_uri,
+    set_name: doubleFacedCard.set_name,
+    artist: doubleFacedCard.artist,
+    collector_number: doubleFacedCard.collector_number,
+    rarity: doubleFacedCard.rarity,
+    oracle_text: doubleFacedCard.card_faces[0].oracle_text || null,
+    frame: doubleFacedCard.frame,
+    related_uris: doubleFacedCard.related_uris,
+    all_parts: doubleFacedCard.all_parts || null,
+  };
+}

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import { Card } from "@/components/Card";
-import { TList } from "@/types/TList";
 import { Header } from "@/components/common/Header";
 import { loadCards } from "@/lib/loadCards";
 import { TCard } from "@/types/TCard";

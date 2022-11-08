@@ -3,15 +3,15 @@ import { CardImage } from "./Card/CardImage";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
 import { OtherPrints } from "./Card/OtherPrints";
-import { loadCardPrints } from "@/lib/loadCard";
 import { TCard } from "@/types/TCard";
 import Link from "next/link";
+import { loadCardPrintsQuantity } from "@/lib/loadCard";
 
 export const Card = ({ card }: { card: TCard }) => {
-  const [prints, setPrints] = React.useState<TCard[]>([]);
+  const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
-    loadCardPrints(card.prints_search_uri).then((data) => {
+    loadCardPrintsQuantity(card.prints_search_uri).then((data) => {
       setPrints(data);
     });
   }, [card.prints_search_uri]);
@@ -23,14 +23,12 @@ export const Card = ({ card }: { card: TCard }) => {
     >
       <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
-        {prints.length > 1 && (
-          <h6 className="text-center text-sm font-semibold">
-            {prints.length} prints
-          </h6>
+        {prints > 1 && (
+          <h6 className="text-center text-sm font-semibold">{prints} prints</h6>
         )}
       </div>
       <div className="mt-1 flex justify-between">
-        <CardName name={card.name} link={"/card/" + card.id} />
+        <CardName name={card.name} />
         <CardTags
           full_art={card.full_art}
           promo={card.promo}

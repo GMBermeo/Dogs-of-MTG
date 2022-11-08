@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -6,43 +6,16 @@ import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
-import { loadCard, loadCardPrints } from "@/lib/loadCard";
-import { TCard, TCardResponse } from "@/types/TCard";
+import { loadCard, TCardWithPrints } from "@/lib/loadCard";
+import { TCard } from "@/types/TCard";
 import { PaintBrushIcon } from "@heroicons/react/20/solid";
-import { TList } from "@/types/TList";
-import { convertCard } from "@/lib/convertResponseToCard";
 
 type CardPageProps = {
-  card: TCardResponse;
+  card: TCard;
   prints: TCard[];
 };
 
-const CardPage: NextPage<CardPageProps> = ({ card }) => {
-  const [prints, setPrints] = React.useState<TCard[]>([]);
-
-  React.useEffect(() => {
-    // declare the async data fetching function
-    const fetchPrints = async () => {
-      // get the data from the api
-      const res = await fetch(
-        `https://api.scryfall.com/cards/search?order=released&q=oracleid%3A${card.oracle_id}&unique=prints`
-      );
-      // convert data to json
-      const printsResponse: TList = (await res.json()) as TList;
-
-      const prints: TCard[] = printsResponse.data.map((card: TCardResponse) =>
-        convertCard(card)
-      );
-      return prints;
-    };
-
-    // call the function
-    const prints = fetchPrints();
-    prints.then((print) => {
-      return setPrints(print);
-    });
-  }, [card.oracle_id]);
-
+const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
   // console.log(getAllCardsIds());
   const quantidade = prints?.length;
 
@@ -211,7 +184,8 @@ export default CardPage;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // const prints: TCard[] = [];
   const { id } = params!;
-  const card: TCardResponse = await loadCard(id as string);
+  const cardWithPrints: TCardWithPrints = await loadCard(id as string);
+  const { card, prints } = cardWithPrints;
   // const prints: TCard[] = await loadCardPrints(card.oracle_id as string);
 
   // const response = await fetch(card.prints_search_uri);
@@ -244,7 +218,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // endpoint && (data = getData(endpoint));
 
   return {
-    props: { card },
+    props: { card, prints },
   };
 };
 

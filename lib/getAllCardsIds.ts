@@ -1,5 +1,5 @@
 import { TCard, TCardResponse } from "@/types/TCard";
-import { loadCardPrints } from "./loadCard";
+// import { loadCardPrints } from "./loadCard";
 import { loadCards } from "./loadCards";
 
 export interface PathParams {
@@ -22,10 +22,10 @@ export async function getAllCardsIds() {
   // });
 
   async function getPrints(card: TCard) {
-    const prints = await loadCardPrints(card.prints_search_uri);
-    prints.forEach((element) => {
-      allCards.push({ params: { id: element.id } });
-    });
+    // const prints = await loadCardPrints(card.prints_search_uri);
+    // prints.forEach((element) => {
+    //   allCards.push({ params: { id: element.id } });
+    // });
   }
 
   data?.map((card) => {

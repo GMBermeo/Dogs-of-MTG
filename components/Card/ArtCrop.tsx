@@ -21,15 +21,15 @@ export const ArtCrop = ({
 }: ArtCropProps) => {
   const router = useRouter();
 
-  function enlarge(e: { preventDefault: () => void }) {
-    e.preventDefault();
-    window.open(large, "_blank");
-  }
+  // function enlarge(e: { preventDefault: () => void }) {
+  //   e.preventDefault();
+  //   window.open(large, "_blank");
+  // }
 
-  function openCard(e: { preventDefault: () => void }) {
-    e.preventDefault();
-    router.push(`/card/${id}`);
-  }
+  // function openCard(e: { preventDefault: () => void }) {
+  //   e.preventDefault();
+  //   router.push(`/card/${id}`);
+  // }
 
   if (artCrop)
     return (
@@ -39,7 +39,7 @@ export const ArtCrop = ({
         style={{ backgroundImage: "url(" + artCrop + ")" }}
         // src={src}
         // alt={`${name} - ${artist} (${frame})`}
-        onClick={openCard}
+        // onClick={openCard}
       ></div>
     );
   else
@@ -48,7 +48,7 @@ export const ArtCrop = ({
         className="my-1 w-full cursor-pointer rounded-lg px-1 print:block print:w-[220px] print:rounded-none"
         src={large}
         alt={`${name} - ${artist} (${frame})`}
-        onClick={enlarge}
+        // onClick={enlarge}
       />
     );
 };
