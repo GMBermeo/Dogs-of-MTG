@@ -102,11 +102,15 @@ export async function loadCards() {
       )
     );
 
-  cardCollection.sort((a, b) => b.released_at?.localeCompare(a.released_at));
+  cardCollection.sort(
+    (a, b) =>
+      b.released_at?.localeCompare(a.released_at) ||
+      b.collector_number.localeCompare(a.collector_number)
+  );
 
   // cards.push(await res2.json());
 
-  // console.log(dogCards);
+  // console.log(cardCollection.length);
 
   // try {
   // code that we will 'try' to run
