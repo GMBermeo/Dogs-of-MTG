@@ -5,6 +5,7 @@ import { CardTags } from "./Card/CardTags";
 import { TCard } from "@/types/TCard";
 import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
+import s from "./Card.module.scss";
 
 export const Card = ({ card }: { card: TCard }) => {
   const [prints, setPrints] = React.useState<number>(0);
@@ -16,10 +17,7 @@ export const Card = ({ card }: { card: TCard }) => {
   }, [card.prints_search_uri]);
 
   return (
-    <Link
-      href={`/card/${card.id}`}
-      className="row-end-auto m-0 rounded-xl bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none"
-    >
+    <Link href={`/card/${card.id}`} className={s.Link}>
       <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
         {prints > 1 && (

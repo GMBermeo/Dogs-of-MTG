@@ -41,7 +41,7 @@ class MyDocument extends Document {
                 "@type": "Guide",
                 about: "Magic of the Gathering",
                 name: "The Dogs of Magic The Gathering",
-                url: "http://dogs-of-mtg.bermeo.dev",
+                url: "https://dogs-of-mtg.bermeo.dev",
                 text: "This tool was developed using the Static Site Generation (SSG) concept with Next.js in order to index all the dog type cards of the Magic The Gathering for a private collection. 🐶 The source code can be found on github and easily changed to any other parameter.",
                 reviewAspect: ["Card", "Type", "Collection"],
                 author: {
