@@ -12,7 +12,9 @@ This is an auxiliary tool that lists every Magic the Gathering card with the typ
  
 ## made with
 
+![Next.js](https://img.shields.io/badge/Next-%230d1117?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/react-%230d1117.svg?style=for-the-badge&logo=react)
+![SASS](https://img.shields.io/badge/sass-%230d1117.svg?style=for-the-badge&logo=sass)
 ![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%230d1117?style=for-the-badge&logo=tailwindcss)
 ![Javascript](https://img.shields.io/badge/javascript-%230d1117.svg?style=for-the-badge&logo=javascript)
 ![Vite](https://img.shields.io/badge/vite-%230d1117.svg?style=for-the-badge&logo=vite&logoColor=%23646CFF)
