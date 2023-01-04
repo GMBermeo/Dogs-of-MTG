@@ -7,7 +7,7 @@ import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
 import s from "./Card.module.scss";
 
-export const Card = ({ card }: { card: TCard }) => {
+export const Card = ({ card, key }: { card: TCard; key: any }) => {
   const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ export const Card = ({ card }: { card: TCard }) => {
       <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
         {prints > 1 && (
-          <h6 className="text-center text-sm font-semibold">{prints} prints</h6>
+          <h6 className="text-center text-xs font-semibold">{prints} prints</h6>
         )}
       </div>
       <div className="mt-1 flex justify-between">
@@ -45,6 +45,7 @@ export const Card = ({ card }: { card: TCard }) => {
       />
       <div className="mb-2 flex flex-col gap-y-2">
         <h4 className="text-center font-bold">{card.set_name}</h4>
+        <p className="hidden print:block">{key}</p>
       </div>
     </Link>
   );
