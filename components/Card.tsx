@@ -7,7 +7,7 @@ import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
 import s from "./Card.module.scss";
 
-export const Card = ({ card, key }: { card: TCard; key: any }) => {
+export const Card = ({ card, index }: { card: TCard; index: any }) => {
   const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
@@ -45,7 +45,7 @@ export const Card = ({ card, key }: { card: TCard; key: any }) => {
       />
       <div className="mb-2 flex flex-col gap-y-2">
         <h4 className="text-center font-bold">{card.set_name}</h4>
-        <p className="hidden print:block">{key}</p>
+        <p className="hidden print:block">{index}</p>
       </div>
     </Link>
   );
