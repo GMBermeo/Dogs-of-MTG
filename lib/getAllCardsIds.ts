@@ -1,12 +1,13 @@
 import { TCard } from "@/types/TCard";
 // import { loadCardPrints } from "./loadCard";
-import { loadCards } from "./loadCards";
+import { loadCards, sleep } from "./loadCards";
 
 export interface PathParams {
   params: { id: string };
 }
 
 export async function getAllCardsIds() {
+  await sleep();
   const allCards: PathParams[] = [];
   // const allCardsUnformated: TCardResponse[] = [];
   const data: TCard[] = await loadCards();

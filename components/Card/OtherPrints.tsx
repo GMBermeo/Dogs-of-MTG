@@ -22,8 +22,8 @@ export const OtherPrints = ({ prints }: OtherPrintsProps) => {
             : "grid grid-cols-3"
         }
       >
-        {prints.map((print: TCard) => (
-          <div className="mb-2 text-center text-xs font-bold" key={print.id}>
+        {prints.map((print: TCard, index) => (
+          <div className="mb-2 text-center text-xs font-bold" key={index}>
             <ArtCrop
               large={print.image_uris.large}
               id={print.id}

@@ -12,8 +12,16 @@ const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
 
   return (
     <div>
-      {sitemapPaths.map((card: TCard) => (
-        <p className="" key={card.id}>
+      {`<url>
+      <loc>https://dogs-of-mtg.bermeo.dev</loc>
+      <image:image>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/Logo.svg</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
+      </image:image>
+   </url>`}
+      {sitemapPaths.map((card: TCard, index) => (
+        <p key={index}>
           {`<url>
           <loc>https://dogs-of-mtg.bermeo.dev/card/${card.id}</loc>
             <image:image>
@@ -24,7 +32,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
             </image:image>
           </url>
           <url>
-          <loc>https://dogs-of-mtg.bermeo.dev/en-US/card/${card.id}</loc>
+          <loc>https://dogs-of-mtg.bermeo.dev/en/card/${card.id}</loc>
             <image:image>
               <image:loc>${card.image_uris.art_crop}</image:loc>
               <image:loc>${card.image_uris.large}</image:loc>

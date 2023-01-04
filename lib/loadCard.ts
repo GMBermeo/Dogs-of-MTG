@@ -6,6 +6,7 @@ import {
   convertDoubleFacedCard,
   convertDoubleFacedCardToOne,
 } from "./convertResponseToCard";
+import { sleep } from "./loadCards";
 
 export interface TCardWithPrints {
   card: TCard;
@@ -13,6 +14,8 @@ export interface TCardWithPrints {
 }
 
 export async function loadCard(id: string): Promise<TCardWithPrints> {
+  await sleep();
+
   const cardResponse = await axios
     .get(`https://api.scryfall.com/cards/${id}`)
     .then((res) => res.data as TCardResponse | TDoubleFacedCardResponse);

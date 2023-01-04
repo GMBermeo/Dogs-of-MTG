@@ -36,7 +36,8 @@ const Home: NextPage<HomeProps> = ({ cards }) => {
       <div className="print:bg-white print:text-black">
         <Header />
         <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
-          {cards && cards?.map((card) => <Card key={card.id} card={card} />)}
+          {cards &&
+            cards?.map((card, index) => <Card key={index} card={card} />)}
         </div>
       </div>
     </>

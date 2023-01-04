@@ -9,6 +9,7 @@ import { getAllCardsIds } from "@/lib/getAllCardsIds";
 import { loadCard, TCardWithPrints } from "@/lib/loadCard";
 import { TCard } from "@/types/TCard";
 import { PaintBrushIcon } from "@heroicons/react/20/solid";
+import { sleep } from "@/lib/loadCards";
 
 type CardPageProps = {
   card: TCard;
@@ -99,6 +100,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           <Link
             href={card?.image_uris.art_crop ?? "/"}
             className="hover:cursor-zoom-in"
+            passHref
           >
             <Image
               className="my-4 min-w-full rounded"
@@ -143,15 +145,16 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             <section>
               <h5 className="mb-2 text-2xl">Prints</h5>
               <div className={`grid gap-4 ${columns}`}>
-                {prints.map((print: TCard) => (
+                {prints.map((print: TCard, index) => (
                   <div
                     className="mb-2 text-center text-xs font-bold"
-                    key={print.id + print.released_at + print.image_uris.small}
+                    key={index}
                   >
                     <div>
                       <Link
                         href={print.image_uris?.large ?? "/"}
                         className="hover:cursor-zoom-in"
+                        passHref
                       >
                         <Image
                           className="mb-1"
@@ -163,10 +166,10 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                           placeholder="blur"
                         />
                       </Link>
-                      <a href={print.related_uris?.gatherer ?? ""}>
+                      <Link href={print.related_uris?.gatherer ?? ""} passHref>
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -182,41 +185,11 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
 export default CardPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  await sleep();
   // const prints: TCard[] = [];
   const { id } = params!;
   const cardWithPrints: TCardWithPrints = await loadCard(id as string);
   const { card, prints } = cardWithPrints;
-  // const prints: TCard[] = await loadCardPrints(card.oracle_id as string);
-
-  // const response = await fetch(card.prints_search_uri);
-  // const data = await response.json();
-  // const prints: TCard[] = data.data;
-
-  // const prints: TCard[] = [];
-  // const loadedPrints: TCard[] = await loadCardPrints(card?.prints_search_uri);
-
-  // loadedPrints.forEach((print: TCard) => {
-  //   prints.push(print);
-  // });
-
-  // const printsResponse: TCard[] = await loadCardPrints(card?.prints_search_uri);
-  // const stringifiedPrints = JSON?.stringify(printsResponse);
-  // const trimmedPrints = stringifiedPrints?.trim() || "";
-  // prints.push(await JSON?.parse(trimmedPrints));
-
-  // printsResponse !== undefined
-  //   ? JSON.parse(JSON.stringify(printsResponse))
-  //   : undefined;
-
-  // export let endpoint;
-  // function getData(endpoint)
-  // {
-  //     return fetch(endpoint)
-  //         .then((d) => d.json());
-  // }
-
-  // endpoint && (data = getData(endpoint));
-
   return {
     props: { card, prints },
   };
@@ -227,6 +200,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  await sleep();
   const paths = await getAllCardsIds();
   // const postList: PostData[] = await GetPosts()
   return {
