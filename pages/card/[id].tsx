@@ -97,10 +97,9 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               />
             </div>
           </div>
-          <Link
-            href={card?.image_uris.art_crop ?? "/"}
+          <a
+            href={card?.image_uris.art_crop ?? "https://dogs-of-mtg.bermeo.dev"}
             className="hover:cursor-zoom-in"
-            passHref
           >
             <Image
               className="my-4 min-w-full rounded"
@@ -112,7 +111,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               placeholder="blur"
               blurDataURL={card?.image_uris.art_crop}
             />
-          </Link>
+          </a>
           <div className="flex justify-between font-bold">
             <h2 className="whitespace-pre-line">{card?.type_line}</h2>
             <h3>{card?.set_name}</h3>
@@ -151,10 +150,12 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                     key={index}
                   >
                     <div>
-                      <Link
-                        href={print.image_uris?.large ?? "/"}
+                      <a
+                        href={
+                          print.image_uris?.large ??
+                          "https://dogs-of-mtg.bermeo.dev"
+                        }
                         className="hover:cursor-zoom-in"
-                        passHref
                       >
                         <Image
                           className="mb-1"
@@ -165,11 +166,16 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                           blurDataURL={print.image_uris?.small}
                           placeholder="blur"
                         />
-                      </Link>
-                      <Link href={print.related_uris?.gatherer ?? ""} passHref>
+                      </a>
+                      <a
+                        href={
+                          print.related_uris?.gatherer ??
+                          "https://dogs-of-mtg.bermeo.dev"
+                        }
+                      >
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 ))}

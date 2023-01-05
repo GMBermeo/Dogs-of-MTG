@@ -51,49 +51,32 @@ export async function loadCards() {
     "https://api.scryfall.com/cards/search?q=t:dog -is:digital in:paper order:released unique:prints -is:dfc -is:mdfc",
     cardCollection
   );
-
   while (dogs.has_more && dogs.next_page) {
     dogs = await loadCardsFromUrl(dogs.next_page, cardCollection);
   }
 
   // Jiang Yanggu
-  const jiangYanggu = await axios
-    .get(
-      "https://api.scryfall.com/cards/search?q=Jiang Yanggu -is:digital in:paper unique:prints -is:dfc -is:mdfc"
-    )
-    .then((res) => res.data as TList);
-  jiangYanggu.data.map((card: TCardResponse) =>
-    cardCollection.push(convertCard(card))
+  const jiangYanggu = await loadCardsFromUrl(
+    "https://api.scryfall.com/cards/search?q=Jiang Yanggu -is:digital in:paper unique:prints -is:dfc -is:mdfc",
+    cardCollection
   );
 
   // Jinnie Fay
-  const jinnieFay = await axios
-    .get(
-      "https://api.scryfall.com/cards/search?q=Jinnie Fay -is:digital in:paper unique:prints -is:dfc -is:mdfc"
-    )
-    .then((res) => res.data as TList);
-  jinnieFay.data.map((card: TCardResponse) =>
-    cardCollection.push(convertCard(card))
+  const jinnieFay = await loadCardsFromUrl(
+    "https://api.scryfall.com/cards/search?q=Jinnie Fay -is:digital in:paper unique:prints -is:dfc -is:mdfc",
+    cardCollection
   );
 
   // Mordenkainen
-  const mordenkainen = await axios
-    .get(
-      "https://api.scryfall.com/cards/search?q=Mordenkainen t:planeswalker -is:digital in:paper -layout:emblem unique:prints -is:dfc -is:mdfc"
-    )
-    .then((res) => res.data as TList);
-  mordenkainen.data.map((card: TCardResponse) =>
-    cardCollection.push(convertCard(card))
+  const mordenkainen = await loadCardsFromUrl(
+    "https://api.scryfall.com/cards/search?q=Mordenkainen t:planeswalker -is:digital in:paper -layout:emblem unique:prints -is:dfc -is:mdfc",
+    cardCollection
   );
 
   // Comet, Stellar Pup
-  const cometStellarPup = await axios
-    .get(
-      "https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:prints"
-    )
-    .then((res) => res.data as TList);
-  cometStellarPup.data.map((card: TCardResponse) =>
-    cardCollection.push(convertCard(card))
+  const cometStellarPup = await loadCardsFromUrl(
+    "https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:prints",
+    cardCollection
   );
 
   // Release the Dogs
@@ -121,10 +104,10 @@ export async function loadCards() {
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Ruff, Underdog Champ
-  const Ruff = await axios
-    .get("https://api.scryfall.com/cards/143052c4-a59a-4bb7-afff-ac38b23d820f")
-    .then((res) => res.data as TCardResponse)
-    .then((data) => cardCollection.push(convertCard(data)));
+  // const Ruff = await axios
+  //   .get("https://api.scryfall.com/cards/143052c4-a59a-4bb7-afff-ac38b23d820f")
+  //   .then((res) => res.data as TCardResponse)
+  //   .then((data) => cardCollection.push(convertCard(data)));
 
   // Haldan, Avid Arcanist (related to Pako, Arcane Retriever)
   const haldanArcanist = await axios

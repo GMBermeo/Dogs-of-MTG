@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="mb-4 flex w-screen flex-col py-4 px-4 md:px-8">
+    <footer className="mb-4 flex w-screen flex-col py-4 px-4 print:hidden md:px-8">
       <div className="flex justify-between">
         <Link href="/" className="hidden opacity-50 hover:opacity-100 md:block">
           <Image
