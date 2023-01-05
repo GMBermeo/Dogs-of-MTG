@@ -13,6 +13,7 @@ export interface TCard {
   id: string;
   name: string;
   released_at: string;
+  illustration_id: string;
   image_uris: ImageUrisCard;
   flavor_text: string | null;
   type_line: string;
@@ -32,6 +33,7 @@ export interface TCard {
   frame: string;
   related_uris: RelatedUris;
   all_parts: AllParts[] | null;
+  prices: Prices;
 }
 
 export interface TCardResponse extends TCard {
@@ -67,7 +69,6 @@ export interface TCardResponse extends TCard {
   rulings_uri: string;
   digital: boolean;
   card_back_id: string;
-  illustration_id: string;
   border_color: string;
   security_stamp: string;
   booster: boolean;
@@ -81,7 +82,6 @@ export interface TCardResponse extends TCard {
   arena_id?: number;
   produced_mana: string[];
   frame_effects: string[];
-
   promo_types: string[];
   mtgo_foil_id?: number;
   watermark: string;

@@ -5,6 +5,7 @@ export function convertCard(card: TCardResponse): TCard {
     id: card.id,
     name: card.name,
     released_at: card.released_at,
+    illustration_id: card.illustration_id,
     image_uris: card.image_uris,
     flavor_text: card.flavor_text || null,
     type_line: card.type_line,
@@ -24,6 +25,7 @@ export function convertCard(card: TCardResponse): TCard {
     frame: card.frame,
     related_uris: card.related_uris,
     all_parts: card.all_parts || null,
+    prices: card.prices,
   };
 }
 
@@ -35,6 +37,7 @@ export function convertDoubleFacedCard(
       id: doubleFacedCard.id,
       name: doubleFacedCard.card_faces[0].name,
       released_at: doubleFacedCard.released_at,
+      illustration_id: doubleFacedCard.card_faces[0].illustration_id,
       image_uris: {
         small: doubleFacedCard.card_faces[0].image_uris.small,
         large: doubleFacedCard.card_faces[0].image_uris.large,
@@ -59,11 +62,13 @@ export function convertDoubleFacedCard(
       frame: doubleFacedCard.frame,
       related_uris: doubleFacedCard.related_uris,
       all_parts: doubleFacedCard.all_parts || null,
+      prices: doubleFacedCard.prices,
     },
     {
       id: doubleFacedCard.id,
       name: doubleFacedCard.card_faces[1].name,
       released_at: doubleFacedCard.released_at,
+      illustration_id: doubleFacedCard.card_faces[1].illustration_id,
       image_uris: {
         small: doubleFacedCard.card_faces[1].image_uris.small,
         large: doubleFacedCard.card_faces[1].image_uris.large,
@@ -88,6 +93,7 @@ export function convertDoubleFacedCard(
       frame: doubleFacedCard.frame,
       related_uris: doubleFacedCard.related_uris,
       all_parts: doubleFacedCard.all_parts || null,
+      prices: doubleFacedCard.prices,
     },
   ];
 }
@@ -99,6 +105,7 @@ export function convertDoubleFacedCardToOne(
     id: doubleFacedCard.id,
     name: doubleFacedCard.name,
     released_at: doubleFacedCard.released_at,
+    illustration_id: doubleFacedCard.card_faces[0].illustration_id,
     image_uris: doubleFacedCard.card_faces[0].image_uris,
     flavor_text: doubleFacedCard.card_faces[0].flavor_name || null,
     type_line: doubleFacedCard.type_line,
@@ -118,5 +125,6 @@ export function convertDoubleFacedCardToOne(
     frame: doubleFacedCard.frame,
     related_uris: doubleFacedCard.related_uris,
     all_parts: doubleFacedCard.all_parts || null,
+    prices: doubleFacedCard.prices,
   };
 }

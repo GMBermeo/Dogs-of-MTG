@@ -4,14 +4,12 @@ import { loadCards } from "@/lib/loadCards";
 import { TCard } from "@/types/TCard";
 
 type SiteMapProps = {
-  sitemapPaths: TCard[];
+  allCardsCollection: TCard[];
 };
 
-const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
-  // console.log(sitemapPaths);
-
+const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
   return (
-    <div>
+    <div className="m-16 text-xs">
       {`<url>
       <loc>https://dogs-of-mtg.bermeo.dev</loc>
       <image:image>
@@ -20,7 +18,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
          <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
       </image:image>
    </url>`}
-      {sitemapPaths.map((card: TCard, index) => (
+      {allCardsCollection.map((card: TCard, index) => (
         <p key={index}>
           {`<url>
           <loc>https://dogs-of-mtg.bermeo.dev/card/${card.id}</loc>
@@ -49,9 +47,9 @@ const Sitemap: NextPage<SiteMapProps> = ({ sitemapPaths }) => {
 export default Sitemap;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const sitemapPaths: TCard[] = await loadCards();
+  const allCardsCollection = await loadCards("prints");
 
   return {
-    props: { sitemapPaths },
+    props: { allCardsCollection },
   };
 };

@@ -7,75 +7,73 @@ export function sleep(): Promise<void> {
   if (!process.env.IS_BUILD) {
     return Promise.resolve();
   }
-  const ms = 1123.5 * (Math.random() + 1);
-  console.log("😴Building:", ms, "ms💤");
+  const ms = Math.floor(1123.5 * (Math.random() + 1));
+  console.log(`😴Building: ${ms}ms💤`);
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// export function avoidRateLimit(delay = 500) {
-//   return new Promise((resolve) => {
-//     setTimeout(resolve, delay);
-//   });
+// async function loadCardsFromUrl(url: string, cards: TCard[]) {
+//   await sleep();
+//   const response = await axios.get(url).then((res) => res.data as TList);
+//   response.data.map((card: TCardResponse) => cards.push(convertCard(card)));
+//   return response;
 // }
 
 async function loadCardsFromUrl(url: string, cards: TCard[]) {
   await sleep();
   const response = await axios.get(url).then((res) => res.data as TList);
-  response.data.map((card: TCardResponse) => cards.push(convertCard(card)));
+
+  // Iterate through the cards and add them to the collection
+  for (const card of response.data) {
+    // Find any existing card with the same illustration_id
+    const existingCard = cards.find(
+      (c) => c.illustration_id === card.illustration_id
+    );
+    if (existingCard && card.prices.usd && existingCard.prices.usd) {
+      // If an existing card was found, check if the new card has a higher price
+      if (card.prices.usd > existingCard.prices.usd) {
+        // Replace the existing card with the new card if it has a higher price
+        cards.splice(cards.indexOf(existingCard), 1, convertCard(card));
+      }
+    } else {
+      // If no existing card was found, add the new card to the collection
+      cards.push(convertCard(card));
+    }
+  }
   return response;
 }
 
-export async function loadCards() {
+export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   const cardCollection: TCard[] = [];
   await sleep();
-  // // Load Dogs
-  // let dogs = await axios
-  //   .get(
-  //     "https://api.scryfall.com/cards/search?q=t:dog -is:digital in:paper order:released unique:prints -is:dfc -is:mdfc"
-  //   )
-  //   .then((res) => res.data as TList);
-  // dogs.data.map((card: TCardResponse) =>
-  //   cardCollection.push(convertCard(card))
-  // );
-  // while (dogs.has_more && dogs.next_page) {
-  //   sleep();
-  //   dogs.data.map((card: TCardResponse) =>
-  //     cardCollection.push(convertCard(card))
-  //   );
-
-  //   dogs = await axios.get(dogs.next_page).then((res) => res.data as TList);
-  // }
 
   // Load Dogs
-  let dogs = await loadCardsFromUrl(
-    "https://api.scryfall.com/cards/search?q=t:dog -is:digital in:paper order:released unique:prints -is:dfc -is:mdfc",
+  const dogs = await loadCardsFromUrl(
+    `https://api.scryfall.com/cards/search?q=t:dog -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
-  while (dogs.has_more && dogs.next_page) {
-    dogs = await loadCardsFromUrl(dogs.next_page, cardCollection);
-  }
 
   // Jiang Yanggu
   const jiangYanggu = await loadCardsFromUrl(
-    "https://api.scryfall.com/cards/search?q=Jiang Yanggu -is:digital in:paper unique:prints -is:dfc -is:mdfc",
+    `https://api.scryfall.com/cards/search?q=Jiang Yanggu -is:digital in:paper unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Jinnie Fay
   const jinnieFay = await loadCardsFromUrl(
-    "https://api.scryfall.com/cards/search?q=Jinnie Fay -is:digital in:paper unique:prints -is:dfc -is:mdfc",
+    `https://api.scryfall.com/cards/search?q=Jinnie Fay -is:digital in:paper unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Mordenkainen
   const mordenkainen = await loadCardsFromUrl(
-    "https://api.scryfall.com/cards/search?q=Mordenkainen t:planeswalker -is:digital in:paper -layout:emblem unique:prints -is:dfc -is:mdfc",
+    `https://api.scryfall.com/cards/search?q=Mordenkainen t:planeswalker -is:digital in:paper -layout:emblem unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Comet, Stellar Pup
   const cometStellarPup = await loadCardsFromUrl(
-    "https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:prints",
+    `https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:${type}`,
     cardCollection
   );
 
@@ -102,12 +100,6 @@ export async function loadCards() {
     .get("https://api.scryfall.com/cards/2003732e-efa5-42c7-8656-90fb4c9fc1e5")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
-
-  // Ruff, Underdog Champ
-  // const Ruff = await axios
-  //   .get("https://api.scryfall.com/cards/143052c4-a59a-4bb7-afff-ac38b23d820f")
-  //   .then((res) => res.data as TCardResponse)
-  //   .then((data) => cardCollection.push(convertCard(data)));
 
   // Haldan, Avid Arcanist (related to Pako, Arcane Retriever)
   const haldanArcanist = await axios

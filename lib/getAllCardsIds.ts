@@ -9,42 +9,11 @@ export interface PathParams {
 export async function getAllCardsIds() {
   await sleep();
   const allCards: PathParams[] = [];
-  // const allCardsUnformated: TCardResponse[] = [];
-  const data: TCard[] = await loadCards();
+  const allCardsCollection = await loadCards("prints");
 
-  // async function getPrints(card: TCard) {
-  //   const prints = await loadCardPrints(card.prints_search_uri);
-  //   allCardsUnformated.push(...prints);
-  // }
-
-  // data.map((card) => {
-  //   getPrints(card);
-  //   allCardsUnformated.push(card);
-  // });
-
-  async function getPrints(card: TCard) {
-    // const prints = await loadCardPrints(card.prints_search_uri);
-    // prints.forEach((element) => {
-    //   allCards.push({ params: { id: element.id } });
-    // });
-  }
-
-  data?.map((card) => {
+  allCardsCollection?.map((card) => {
     allCards.push({ params: { id: card.id } });
-    getPrints(card);
   });
 
-  // data.map((card) => getPrints(card));
-  // allCardsPath = data;
-
-  // console.log(allCards);
-
   return allCards;
-  // return allCards.map((card) => {
-  //   return {
-  //     params: {
-  //       id: card.id,
-  //     },
-  //   };
-  // });
 }
