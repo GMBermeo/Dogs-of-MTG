@@ -10,6 +10,9 @@ type SiteMapProps = {
 const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
   return (
     <div className="m-16 text-xs">
+      {`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`}
       {`<url>
       <loc>https://dogs-of-mtg.bermeo.dev</loc>
       <image:image>
@@ -17,6 +20,34 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
          <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
          <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
       </image:image>
+   </url>`}
+      {`<url>
+      <loc>https://dogs-of-mtg.bermeo.dev/all-prints</loc>
+      <image:image>
+      `}
+      {allCardsCollection.map((card: TCard, index) => (
+        <p key={index}>
+          {`    <image:loc>${card.image_uris.art_crop}</image:loc>
+                <image:loc>${card.image_uris.large}</image:loc>
+                <image:loc>${card.image_uris.png}</image:loc>
+                <image:loc>${card.image_uris.small}</image:loc>`}
+        </p>
+      ))}
+      {`</image:image>
+   </url>`}
+      {`<url>
+      <loc>https://dogs-of-mtg.bermeo.dev/en/all-prints</loc>
+      <image:image>
+      `}
+      {allCardsCollection.map((card: TCard, index) => (
+        <p key={index}>
+          {`    <image:loc>${card.image_uris.art_crop}</image:loc>
+                <image:loc>${card.image_uris.large}</image:loc>
+                <image:loc>${card.image_uris.png}</image:loc>
+                <image:loc>${card.image_uris.small}</image:loc>`}
+        </p>
+      ))}
+      {`</image:image>
    </url>`}
       {allCardsCollection.map((card: TCard, index) => (
         <p key={index}>
@@ -40,6 +71,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
           </url>`}
         </p>
       ))}
+      {`</urlset>`}
     </div>
   );
 };

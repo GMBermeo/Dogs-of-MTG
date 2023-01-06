@@ -7,7 +7,7 @@ export function sleep(): Promise<void> {
   if (!process.env.IS_BUILD) {
     return Promise.resolve();
   }
-  const ms = Math.floor(1123.5 * (Math.random() + 1));
+  const ms = Math.floor(1123.5 * (Math.random() + 2));
   console.log(`😴Building: ${ms}ms💤`);
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -22,24 +22,7 @@ export function sleep(): Promise<void> {
 async function loadCardsFromUrl(url: string, cards: TCard[]) {
   await sleep();
   const response = await axios.get(url).then((res) => res.data as TList);
-
-  // Iterate through the cards and add them to the collection
-  for (const card of response.data) {
-    // Find any existing card with the same illustration_id
-    const existingCard = cards.find(
-      (c) => c.illustration_id === card.illustration_id
-    );
-    if (existingCard && card.prices.usd && existingCard.prices.usd) {
-      // If an existing card was found, check if the new card has a higher price
-      if (card.prices.usd > existingCard.prices.usd) {
-        // Replace the existing card with the new card if it has a higher price
-        cards.splice(cards.indexOf(existingCard), 1, convertCard(card));
-      }
-    } else {
-      // If no existing card was found, add the new card to the collection
-      cards.push(convertCard(card));
-    }
-  }
+  response.data.map((card: TCardResponse) => cards.push(convertCard(card)));
   return response;
 }
 
@@ -48,10 +31,13 @@ export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   await sleep();
 
   // Load Dogs
-  const dogs = await loadCardsFromUrl(
+  let dogs = await loadCardsFromUrl(
     `https://api.scryfall.com/cards/search?q=t:dog -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
+  while (dogs.has_more && dogs.next_page) {
+    dogs = await loadCardsFromUrl(dogs.next_page, cardCollection);
+  }
 
   // Jiang Yanggu
   const jiangYanggu = await loadCardsFromUrl(
