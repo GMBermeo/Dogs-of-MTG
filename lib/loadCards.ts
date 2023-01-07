@@ -62,6 +62,11 @@ export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
     `https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:${type}`,
     cardCollection
   );
+  // Ronin Houndmaster
+  const roninRoundMaster = await axios
+    .get("https://api.scryfall.com/cards/614ead7b-1975-4a99-bdc2-f8afc6cf92d7")
+    .then((res) => res.data as TCardResponse)
+    .then((data) => cardCollection.push(convertCard(data)));
 
   // Release the Dogs
   const releaseTheDogs = await axios
