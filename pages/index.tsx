@@ -38,7 +38,11 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {cardCollection &&
             cardCollection?.map((card, index) => (
-              <Card key={index} card={card} index={index} />
+              <Card
+                key={index}
+                card={card}
+                index={cardCollection.length - index}
+              />
             ))}
         </div>
       </div>

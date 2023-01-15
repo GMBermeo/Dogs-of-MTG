@@ -7,7 +7,7 @@ import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
 import s from "./Card.module.scss";
 
-export const Card = ({ card, index }: { card: TCard; index: any }) => {
+export const Card = ({ card, index }: { card: TCard; index: number }) => {
   const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
