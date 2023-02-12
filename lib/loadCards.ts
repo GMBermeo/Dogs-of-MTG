@@ -22,7 +22,7 @@ export function sleep(): Promise<void> {
 async function loadCardsFromUrl(url: string, cards: TCard[]) {
   await sleep();
   const response = await axios.get(url).then((res) => res.data as TList);
-  response.data.map((card: TCardResponse) => cards.push(convertCard(card)));
+  response.data.forEach((card: TCardResponse) => cards.push(convertCard(card)));
   return response;
 }
 
@@ -40,66 +40,90 @@ export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   }
 
   // Jiang Yanggu
-  const jiangYanggu = await loadCardsFromUrl(
+  await loadCardsFromUrl(
     `https://api.scryfall.com/cards/search?q=Jiang Yanggu -is:digital in:paper unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Jinnie Fay
-  const jinnieFay = await loadCardsFromUrl(
+  await loadCardsFromUrl(
     `https://api.scryfall.com/cards/search?q=Jinnie Fay -is:digital in:paper unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Mordenkainen
-  const mordenkainen = await loadCardsFromUrl(
+  await loadCardsFromUrl(
     `https://api.scryfall.com/cards/search?q=Mordenkainen t:planeswalker -is:digital in:paper -layout:emblem unique:${type} -is:dfc -is:mdfc`,
     cardCollection
   );
 
   // Comet, Stellar Pup
-  const cometStellarPup = await loadCardsFromUrl(
+  await loadCardsFromUrl(
     `https://api.scryfall.com/cards/search?q=t:comet -is:digital in:paper order:released unique:${type}`,
     cardCollection
   );
   // Ronin Houndmaster
-  const roninRoundMaster = await axios
+  await axios
     .get("https://api.scryfall.com/cards/614ead7b-1975-4a99-bdc2-f8afc6cf92d7")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Release the Dogs
-  const releaseTheDogs = await axios
+  await axios
     .get("https://api.scryfall.com/cards/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
   //Chakram Slinger
-  const chakramSlinger = await axios
+  await axios
     .get("https://api.scryfall.com/cards/3414b206-caff-4240-82ed-a1bb9c763d2f")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Alpine Houndmaster
-  const alpineHoundmaster = await axios
+  await axios
     .get("https://api.scryfall.com/cards/43224e74-2c51-40bd-bc34-f66e990a3e33")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Dogsnail Engine
-  const dogsnailEngine = await axios
+  await axios
     .get("https://api.scryfall.com/cards/2003732e-efa5-42c7-8656-90fb4c9fc1e5")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
   // Haldan, Avid Arcanist (related to Pako, Arcane Retriever)
-  const haldanArcanist = await axios
+  await axios
     .get("https://api.scryfall.com/cards/16a86a35-f7e5-434d-bf44-61ae7cb0f98b")
     .then((res) => res.data as TCardResponse)
     .then((data) => cardCollection.push(convertCard(data)));
 
+  // Dig Through Time (Secret Lair)
+  await axios
+    .get("https://api.scryfall.com/cards/06025c01-1d70-4e8d-b030-60a773631b54")
+    .then((res) => res.data as TCardResponse)
+    .then((data) => cardCollection.push(convertCard(data)));
+
+  // Ancient Grudge (Secret Lair)
+  await axios
+    .get("https://api.scryfall.com/cards/7d8adb0c-a322-4447-bf2e-7a74e3b735c4")
+    .then((res) => res.data as TCardResponse)
+    .then((data) => cardCollection.push(convertCard(data)));
+
+  // Lightning Greaves (Secret Lair)
+  await axios
+    .get("https://api.scryfall.com/cards/19080c3f-67fa-4f98-9b5a-ede8579823d6")
+    .then((res) => res.data as TCardResponse)
+    .then((data) => cardCollection.push(convertCard(data)));
+
+  // Rest in Peace (Secret Lair)
+  await axios
+    .get("https://api.scryfall.com/cards/9008f826-9e24-4ba1-b17e-1638b7cdd78d")
+    .then((res) => res.data as TCardResponse)
+    .then((data) => cardCollection.push(convertCard(data)));
+
   // Mowu Double Faced Token
-  const mowuDouble = await axios
+  await axios
     .get("https://api.scryfall.com/cards/b10441dd-9029-4f95-9566-d3771ebd36bd")
     .then((res) => res.data as TDoubleFacedCardResponse)
     .then((data) =>
