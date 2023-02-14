@@ -4,12 +4,37 @@ import { Card } from "@/components/Card";
 import { Header } from "@/components/common/Header";
 import { loadCards } from "@/lib/loadCards";
 import { TCard } from "@/types/TCard";
+import { useCallback, useEffect, useState } from "react";
 
 type HomeProps = {
   cardCollection: TCard[];
+  page: number;
 };
 
 const Home: NextPage<HomeProps> = ({ cardCollection }) => {
+  const [state, setState] = useState({
+    cards: cardCollection.slice(0, 12),
+    hasMore: true,
+  });
+
+  const handleScroll = useCallback(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+        document.documentElement.offsetHeight ||
+      !state.hasMore
+    ) {
+      setState((prevState) => ({
+        ...prevState,
+        cards: cardCollection.slice(0, prevState.cards.length + 6),
+        hasMore: prevState.cards.length + 6 < cardCollection.length,
+      }));
+    }
+  }, [cardCollection, state.hasMore]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
   return (
     <>
       <Head>
@@ -35,11 +60,11 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
       </Head>
       <div className="print:bg-white print:text-black">
         <Header />
-        <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-          {cardCollection &&
-            cardCollection?.map((card, index) => (
+        <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+          {state.cards &&
+            state.cards?.map((card, index) => (
               <Card
-                key={index}
+                key={card.illustration_id}
                 card={card}
                 index={cardCollection.length - index}
               />
@@ -54,8 +79,9 @@ export default Home;
 
 export async function getServerSideProps() {
   const cardCollection = await loadCards("art");
+  const page = 1;
 
   return {
-    props: { cardCollection }, // will be passed to the page component as props
+    props: { cardCollection, page }, // will be passed to the page component as props
   };
 }

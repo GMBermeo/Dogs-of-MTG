@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import { CardImage } from "./Card/CardImage";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
@@ -7,7 +7,13 @@ import Link from "next/link";
 import { loadCardPrintsQuantity } from "@/lib/loadCard";
 import s from "./Card.module.scss";
 
-export const Card = ({ card, index }: { card: TCard; index: number }) => {
+export const CardComponent = ({
+  card,
+  index,
+}: {
+  card: TCard;
+  index: number;
+}) => {
   const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
@@ -15,6 +21,31 @@ export const Card = ({ card, index }: { card: TCard; index: number }) => {
       setPrints(data);
     });
   }, [card.prints_search_uri]);
+
+  const memoizedCardImage = useMemo(
+    () => (
+      <CardImage
+        png={card.image_uris.png}
+        large={card.image_uris.large}
+        small={card.image_uris.small}
+        id={card.id}
+        name={card.name}
+        artist={card.artist}
+        frame={card.released_at.slice(0, 4)}
+        flavor_text={card?.flavor_text}
+      />
+    ),
+    [
+      card.id,
+      card.image_uris.png,
+      card.image_uris.large,
+      card.image_uris.small,
+      card.name,
+      card.artist,
+      card.released_at,
+      card.flavor_text,
+    ]
+  );
 
   return (
     <Link href={`/card/${card.id}`} className={s.Link}>
@@ -33,16 +64,7 @@ export const Card = ({ card, index }: { card: TCard; index: number }) => {
           variation={card.variation}
         />
       </div>
-      <CardImage
-        png={card.image_uris.png}
-        large={card.image_uris.large}
-        small={card.image_uris.small}
-        id={card.id}
-        name={card.name}
-        artist={card.artist}
-        frame={card.released_at.slice(0, 4)}
-        flavor_text={card?.flavor_text}
-      />
+      {memoizedCardImage}
       <div className="mb-2 flex flex-col gap-y-2">
         <h4 className="text-center font-bold">{card.set_name}</h4>
         <p className="hidden print:block">{index}</p>
@@ -50,3 +72,5 @@ export const Card = ({ card, index }: { card: TCard; index: number }) => {
     </Link>
   );
 };
+
+export const Card = memo(CardComponent);
