@@ -40,8 +40,8 @@ class MyDocument extends Document {
                 "@context": "https://schema.org",
                 "@type": "Guide",
                 about: "Magic of the Gathering",
-                name: "The Dogs of Magic The Gathering",
-                url: "https://dogs-of-mtg.bermeo.dev",
+                name: "The Goblins of Magic The Gathering",
+                url: "https://goblins-of-mtg.bermeo.dev",
                 text: "This tool was developed using the Static Site Generation (SSG) concept with Next.js in order to index all the dog type cards of the Magic The Gathering for a private collection. 🐶 The source code can be found on github and easily changed to any other parameter.",
                 reviewAspect: ["Card", "Type", "Collection"],
                 author: {
@@ -67,7 +67,7 @@ class MyDocument extends Document {
                     "https://y.qq.com/n/yqq/singer/002TUXMq1927t7.html",
                   ],
                   email: "mailto:guilherme@bermeo.dev",
-                  image: "https://dogs-of-mtg.bermeo.dev/Logo.svg",
+                  image: "https://goblins-of-mtg.bermeo.dev/Logo.svg",
                   jobTitle: "Front-end Developer",
                   address: {
                     "@type": "PostalAddress",
@@ -79,7 +79,7 @@ class MyDocument extends Document {
             }}
           />
           <meta name="author" content="Guilherme Bermêo" />
-          <link rel="canonical" href="https://dogs-of-mtg.bermeo.dev" />
+          <link rel="canonical" href="https://goblins-of-mtg.bermeo.dev" />
           <meta name="language" content="English" />
           <meta
             name="keywords"

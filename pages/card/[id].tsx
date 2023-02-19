@@ -34,7 +34,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           {`${card?.name} (${card?.released_at.slice(
             0,
             4
-          )}) - The Dogs of Magic the Gathering`}
+          )}) - The Goblins of Magic the Gathering`}
         </title>
         <meta
           name="description"
@@ -53,7 +53,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           content={`${card?.name} (${card?.released_at.slice(
             0,
             4
-          )}) - The Dogs of Magic the Gathering`}
+          )}) - The Goblins of Magic the Gathering`}
         />
         <meta
           property="og:description"
@@ -73,7 +73,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
         />
         <meta
           property="og:url"
-          content={`https://dogs-of-mtg.bermeo.dev/card/${card?.id}`}
+          content={`https://goblins-of-mtg.bermeo.dev/card/${card?.id}`}
         />
         <meta property="og:locale" content="en_US" />
       </Head>
@@ -98,7 +98,9 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             </div>
           </div>
           <a
-            href={card?.image_uris.art_crop ?? "https://dogs-of-mtg.bermeo.dev"}
+            href={
+              card?.image_uris.art_crop ?? "https://goblins-of-mtg.bermeo.dev"
+            }
             className="hover:cursor-zoom-in"
           >
             <Image
@@ -153,7 +155,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       <a
                         href={
                           print.image_uris?.large ??
-                          "https://dogs-of-mtg.bermeo.dev"
+                          "https://goblins-of-mtg.bermeo.dev"
                         }
                         className="hover:cursor-zoom-in"
                       >
@@ -170,7 +172,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       <a
                         href={
                           print.related_uris?.gatherer ??
-                          "https://dogs-of-mtg.bermeo.dev"
+                          "https://goblins-of-mtg.bermeo.dev"
                         }
                       >
                         <h6>{print.set_name}</h6>
