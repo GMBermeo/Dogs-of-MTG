@@ -2,14 +2,14 @@
 
 <img width="64px" style="float:right; transform: scaleX(-1)" src="https://dogs-of-mtg.bermeo.dev/Logo.svg" alt="Logo"/>
 
-This is an auxiliary tool that lists every Magic the Gathering card with the type "dog" or "hound".
+This is an auxiliary tool that lists every Magic the Gathering card with a dog reference.
 
 ## features
 
-* Change the fetch request on `GlobalContext.jsx` to easily change the listed cards.
+* Change the fetch request on `lib/loadCards` to easily change the listed cards.
 * It uses some `print:` classes from the Tailwind CSS to print better proxies and use less ink.
 * If the card has Full Art, Promo, Reprint, or Variation prints available it shows a tag on the upper right side.
- 
+
 ## made with
 
 ![Next.js](https://img.shields.io/badge/Next-%230d1117?style=for-the-badge&logo=next.js)
@@ -39,9 +39,17 @@ yarn build
 
 ## known issues
 
-* [Release the Dogs (Jumpstart)](https://gatherer.wizards.com/Pages/Card/Details.aspx?name=Release+the+Dogs) is not included, but can be included with a secondary fetch.
-* Tokens are not included.
+* none for now
 
 ## data source
 
 * [Scryfall API](https://scryfall.com/docs/api)
+
+## other projects
+
+* [Dogs of MTG](https://dogs-of-mtg.bermeo.dev)
+* [Full Art Lands of MTG](https://lands-of-mtg.bermeo.dev)
+* [Crabs of MTG](https://crabs-of-mtg.bermeo.dev)
+* [Goblins of MTG](https://goblins-of-mtg.bermeo.dev)
+* [Dragons of MTG](https://dragons-of-mtg.bermeo.dev)
+* [Rats of MTG](https://rats-of-mtg.bermeo.dev)
