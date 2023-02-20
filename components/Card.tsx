@@ -27,6 +27,7 @@ export const CardComponent = ({
       <CardImage
         png={card.image_uris.png}
         large={card.image_uris.large}
+        normal={card.image_uris.normal}
         small={card.image_uris.small}
         id={card.id}
         name={card.name}
