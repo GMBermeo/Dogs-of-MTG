@@ -63,7 +63,7 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
       </Head>
       <div className="print:bg-white print:text-black">
         <Header />
-        <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <div className="mx-5 grid grid-cols-2 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
           {state.cards &&
             state.cards?.map((card, index) => (
               <Card key={card.illustration_id} card={card} index={index} />

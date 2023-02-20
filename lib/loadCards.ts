@@ -1,13 +1,13 @@
-import { TCard, TCardResponse, TDoubleFacedCardResponse } from "@/types/TCard";
+import { TCard, TCardResponse } from "@/types/TCard";
 import { TList } from "@/types/TList";
 import axios from "axios";
-import { convertCard, convertDoubleFacedCard } from "./convertResponseToCard";
+import { convertCard } from "./convertResponseToCard";
 
 export function sleep(): Promise<void> {
   if (!process.env.IS_BUILD) {
     return Promise.resolve();
   }
-  const ms = Math.floor(1123.5 * (Math.random() + 2));
+  const ms = Math.floor(1123.5 * (Math.random() + 1));
   console.log(`😴Building: ${ms}ms💤`);
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
