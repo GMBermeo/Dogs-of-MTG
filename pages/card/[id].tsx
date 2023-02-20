@@ -2,7 +2,6 @@ import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
@@ -17,7 +16,6 @@ type CardPageProps = {
 };
 
 const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
-  // console.log(getAllCardsIds());
   const quantidade = prints?.length;
 
   const columns =
@@ -161,7 +159,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       >
                         <Image
                           className="mb-1"
-                          src={print.image_uris?.png}
+                          src={print.image_uris?.small}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
                           width={672}
                           height={936}

@@ -29,7 +29,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
         <p key={index}>
           {`    <image:loc>${card.image_uris.art_crop}</image:loc>
                 <image:loc>${card.image_uris.large}</image:loc>
-                <image:loc>${card.image_uris.png}</image:loc>
+                <image:loc>${card.image_uris.normal}</image:loc>
                 <image:loc>${card.image_uris.small}</image:loc>`}
         </p>
       ))}
@@ -43,7 +43,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
         <p key={index}>
           {`    <image:loc>${card.image_uris.art_crop}</image:loc>
                 <image:loc>${card.image_uris.large}</image:loc>
-                <image:loc>${card.image_uris.png}</image:loc>
+                <image:loc>${card.image_uris.normal}</image:loc>
                 <image:loc>${card.image_uris.small}</image:loc>`}
         </p>
       ))}
@@ -56,7 +56,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
             <image:image>
               <image:loc>${card.image_uris.art_crop}</image:loc>
               <image:loc>${card.image_uris.large}</image:loc>
-              <image:loc>${card.image_uris.png}</image:loc>
+              <image:loc>${card.image_uris.normal}</image:loc>
               <image:loc>${card.image_uris.small}</image:loc>
             </image:image>
           </url>
@@ -65,7 +65,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
             <image:image>
               <image:loc>${card.image_uris.art_crop}</image:loc>
               <image:loc>${card.image_uris.large}</image:loc>
-              <image:loc>${card.image_uris.png}</image:loc>
+              <image:loc>${card.image_uris.normal}</image:loc>
               <image:loc>${card.image_uris.small}</image:loc>
             </image:image>
           </url>`}
