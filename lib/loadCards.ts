@@ -1,7 +1,7 @@
-import { TCard, TCardResponse } from "@/types/TCard";
+import { TCard, TCardResponse, TDoubleFacedCardResponse } from "@/types/TCard";
 import { TList } from "@/types/TList";
 import axios from "axios";
-import { convertCard } from "./convertResponseToCard";
+import { convertCard, convertDoubleFacedCard } from "./convertResponseToCard";
 
 export function sleep(): Promise<void> {
   if (!process.env.IS_BUILD) {
@@ -30,13 +30,13 @@ export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   const cardCollection: TCard[] = [];
   await sleep();
 
-  // Load Goblins
-  let goblins = await loadCardsFromUrl(
-    `https://api.scryfall.com/cards/search?q=t:goblin -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc`,
+  // Load Rats
+  let rats = await loadCardsFromUrl(
+    `https://api.scryfall.com/cards/search?q=t:rat -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc -is:flip`,
     cardCollection
   );
-  while (goblins.has_more && goblins.next_page) {
-    goblins = await loadCardsFromUrl(goblins.next_page, cardCollection);
+  while (rats.has_more && rats.next_page) {
+    rats = await loadCardsFromUrl(rats.next_page, cardCollection);
   }
 
   cardCollection.sort(

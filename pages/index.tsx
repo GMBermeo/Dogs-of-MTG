@@ -38,29 +38,24 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
   return (
     <>
       <Head>
-        <title>The Goblins of Magic the Gathering</title>
+        <title>The Rats of Magic the Gathering</title>
         <meta
           name="description"
-          content="'If you're starving, eat your horses, your dead, or yourself—but NEVER eat your dog.' —General Jarkeld, the Arctic Fox. 🐾 This tool was developed using the Static Site Generation (SSG) concept with Next.js in order to index all the dog type cards of the Magic The Gathering for a private collection. 🐶 The source code can be found on github and easily changed to any other parameter."
+          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
         />
 
-        <meta
-          property="og:title"
-          content="The Goblins of Magic the Gathering"
-        />
+        <meta property="og:title" content="The Rats of Magic the Gathering" />
         <meta
           property="og:description"
-          content="'If you're starving, eat your horses, your dead, or yourself—but NEVER eat your dog.' —General Jarkeld, the Arctic Fox. 🐾 This tool was developed using the Static Site Generation (SSG) concept with Next.js in order to index all the dog type cards of the Magic The Gathering for a private collection. 🐶 The source code can be found on github and easily changed to any other parameter."
+          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
         />
         <meta
           property="og:image"
-          content={
-            "https://goblins-of-mtg.bermeo.dev/icons/favicon-3000x3000.png"
-          }
+          content={"https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png"}
         />
         <meta property="og:image:width" content="3000" />
         <meta property="og:image:height" content="3000" />
-        <meta property="og:url" content="https://goblins-of-mtg.bermeo.dev/" />
+        <meta property="og:url" content="https://rats-of-mtg.bermeo.dev/" />
         <meta property="og:locale" content="en_US" />
       </Head>
       <div className="print:bg-white print:text-black">
@@ -68,11 +63,7 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         <div className="mx-5 grid grid-cols-1 gap-5 print:h-1/2 print:grid-cols-3 print:grid-rows-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {state.cards &&
             state.cards?.map((card, index) => (
-              <Card
-                key={card.illustration_id}
-                card={card}
-                index={cardCollection.length - index}
-              />
+              <Card key={card.illustration_id} card={card} index={index} />
             ))}
         </div>
       </div>
