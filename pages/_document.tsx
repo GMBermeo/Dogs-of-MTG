@@ -11,24 +11,24 @@ class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/apple-touch-icon.png"
+            href="https://dogs-of-mtg.bermeo.dev/icons/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/icons/favicon-32x32.png"
+            href="https://dogs-of-mtg.bermeo.dev/icons/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/icons/favicon-16x16.png"
+            href="https://dogs-of-mtg.bermeo.dev/icons/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
           <link
             rel="mask-icon"
-            href="/icons/safari-pinned-tab.svg"
+            href="https://dogs-of-mtg.bermeo.dev/icons/safari-pinned-tab.svg"
             color="#c0392b"
           />
           <meta name="msapplication-TileColor" content="#233140" />
@@ -67,7 +67,7 @@ class MyDocument extends Document {
                     "https://y.qq.com/n/yqq/singer/002TUXMq1927t7.html",
                   ],
                   email: "mailto:guilherme@bermeo.dev",
-                  image: "https://goblins-of-mtg.bermeo.dev/Logo.svg",
+                  image: "https://dogs-of-mtg.bermeo.dev/Logo.svg",
                   jobTitle: "Front-end Developer",
                   address: {
                     "@type": "PostalAddress",

@@ -10,37 +10,37 @@
       "purpose": "any"
     },
     {
-      "src": "/icons/android-chrome-192x192.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/android-chrome-512x512.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "/icons/apple-touch-icon.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
     },
     {
-      "src": "/icons/favicon-16x16.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/favicon-16x16.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "/icons/favicon-32x32.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/favicon-32x32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "/icons/favicon-3000x3000.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png",
       "type": "image/png",
       "sizes": "3000x3000"
     },
     {
-      "src": "/icons/favicon-6000x6000.png",
+      "src": "https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png",
       "type": "image/png",
       "sizes": "6000x6000",
       "purpose": "maskable"
@@ -59,7 +59,12 @@
       "short_name": "The First Dog",
       "description": "Snow Hound was the first dog/hound card of Magic The Gathering",
       "url": "/card/084437ba-26d4-4af6-ab00-dcb145dd2cd0",
-      "icons": [{ "src": "https://cards.scryfall.io/art_crop/front/0/8/084437ba-26d4-4af6-ab00-dcb145dd2cd0.jpg?1587911779", "sizes": "582x467" }]
+      "icons": [
+        {
+          "src": "https://cards.scryfall.io/art_crop/front/0/8/084437ba-26d4-4af6-ab00-dcb145dd2cd0.jpg?1587911779",
+          "sizes": "582x467"
+        }
+      ]
     }
   ]
 }

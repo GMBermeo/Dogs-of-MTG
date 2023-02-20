@@ -16,9 +16,9 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
       {`<url>
       <loc>https://goblins-of-mtg.bermeo.dev</loc>
       <image:image>
-         <image:loc>https://goblins-of-mtg.bermeo.dev/Logo.svg</image:loc>
-         <image:loc>https://goblins-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
-         <image:loc>https://goblins-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/Logo.svg</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
+         <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-6000x6000.png</image:loc>
       </image:image>
    </url>`}
       {`<url>
