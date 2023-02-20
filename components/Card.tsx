@@ -51,12 +51,6 @@ export const CardComponent = ({
     <Link href={`/card/${card.id}`} className={s.Link}>
       <div className="flex justify-between">
         <div className="text-sm font-medium">{card.released_at}</div>
-        {prints > 1 && (
-          <h6 className="text-center text-xs font-semibold">{prints} prints</h6>
-        )}
-      </div>
-      <div className="mt-1 flex justify-between">
-        <CardName name={card.name} />
         <CardTags
           full_art={card.full_art}
           promo={card.promo}
@@ -64,6 +58,7 @@ export const CardComponent = ({
           variation={card.variation}
         />
       </div>
+
       {memoizedCardImage}
       <div className="mb-2 flex flex-col gap-y-2">
         <h4 className="text-center font-bold">{card.set_name}</h4>

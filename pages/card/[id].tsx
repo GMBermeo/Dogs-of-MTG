@@ -2,7 +2,6 @@ import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
@@ -34,7 +33,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           {`${card?.name} (${card?.released_at.slice(
             0,
             4
-          )}) - The Dogs of Magic the Gathering`}
+          )}) - The Lands of Magic the Gathering`}
         </title>
         <meta
           name="description"
@@ -73,7 +72,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
         />
         <meta
           property="og:url"
-          content={`https://dogs-of-mtg.bermeo.dev/card/${card?.id}`}
+          content={`https://lands-of-mtg.bermeo.dev/card/${card?.id}`}
         />
         <meta property="og:locale" content="en_US" />
       </Head>
@@ -81,13 +80,6 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
         <div className="row-end-auto m-0 rounded-none bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none md:rounded-lg">
           <div className="flex justify-between ">
             <h1 className="text-2xl font-medium">{card?.name}</h1>
-            <div className="my-auto text-sm font-medium">
-              {card?.released_at}
-            </div>
-            <div className="my-auto hidden text-sm font-medium md:block">
-              Total prints: {prints?.length}
-            </div>
-
             <div className="flex gap-x-4">
               <CardTags
                 full_art={card?.full_art}
@@ -96,9 +88,14 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                 variation={card?.variation}
               />
             </div>
+            <div className="my-auto text-sm font-medium">
+              {card?.released_at}
+            </div>
           </div>
           <a
-            href={card?.image_uris.art_crop ?? "https://dogs-of-mtg.bermeo.dev"}
+            href={
+              card?.image_uris.art_crop ?? "https://lands-of-mtg.bermeo.dev"
+            }
             className="hover:cursor-zoom-in"
           >
             <Image
@@ -140,48 +137,6 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               </div>
             )}
           </div>
-          {prints && (
-            <section>
-              <h5 className="mb-2 text-2xl">Prints</h5>
-              <div className={`grid gap-4 ${columns}`}>
-                {prints.map((print: TCard, index) => (
-                  <div
-                    className="mb-2 text-center text-xs font-bold"
-                    key={index}
-                  >
-                    <div>
-                      <a
-                        href={
-                          print.image_uris?.large ??
-                          "https://dogs-of-mtg.bermeo.dev"
-                        }
-                        className="hover:cursor-zoom-in"
-                      >
-                        <Image
-                          className="mb-1"
-                          src={print.image_uris?.png}
-                          alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
-                          width={672}
-                          height={936}
-                          blurDataURL={print.image_uris?.small}
-                          placeholder="blur"
-                        />
-                      </a>
-                      <a
-                        href={
-                          print.related_uris?.gatherer ??
-                          "https://dogs-of-mtg.bermeo.dev"
-                        }
-                      >
-                        <h6>{print.set_name}</h6>
-                        <p>{print.released_at}</p>
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
         </div>
       </div>
     </>
@@ -195,9 +150,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // const prints: TCard[] = [];
   const { id } = params!;
   const cardWithPrints: TCardWithPrints = await loadCard(id as string);
-  const { card, prints } = cardWithPrints;
+  const { card } = cardWithPrints;
   return {
-    props: { card, prints },
+    props: { card },
   };
 };
 

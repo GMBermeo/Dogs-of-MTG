@@ -26,11 +26,13 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         />
         <meta
           property="og:image"
-          content={"https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png"}
+          content={
+            "https://lands-of-mtg.bermeo.dev/icons/favicon-3000x3000.png"
+          }
         />
         <meta property="og:image:width" content="3000" />
         <meta property="og:image:height" content="3000" />
-        <meta property="og:url" content="https://dogs-of-mtg.bermeo.dev/" />
+        <meta property="og:url" content="https://lands-of-mtg.bermeo.dev/" />
         <meta property="og:locale" content="en_US" />
       </Head>
       <div className="print:bg-white print:text-black">

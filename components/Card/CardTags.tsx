@@ -21,9 +21,9 @@ export const CardTags = ({
 
   return (
     <div className="flex justify-center gap-x-3">
-      {full_art && <Tag text="Full Art" />}
+      {/* {full_art && <Tag text="Full Art" />} */}
       {promo && <Tag text="Promo" />}
-      {reprint && <Tag text="Reprint" />}
+      {/* {reprint && <Tag text="Reprint" />} */}
       {variation && <Tag text="Variation" />}
     </div>
   );
