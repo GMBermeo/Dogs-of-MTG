@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 
 type CardImageProps = {
-  png: string;
   normal: string;
   large: string;
   id: string;
@@ -14,7 +13,6 @@ type CardImageProps = {
 };
 
 export const CardImage = ({
-  png,
   id,
   name,
   artist,

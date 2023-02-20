@@ -25,7 +25,6 @@ export const CardComponent = ({
   const memoizedCardImage = useMemo(
     () => (
       <CardImage
-        png={card.image_uris.png}
         large={card.image_uris.large}
         normal={card.image_uris.normal}
         small={card.image_uris.small}
@@ -37,14 +36,14 @@ export const CardComponent = ({
       />
     ),
     [
-      card.id,
-      card.image_uris.png,
       card.image_uris.large,
+      card.image_uris.normal,
       card.image_uris.small,
+      card.id,
       card.name,
       card.artist,
       card.released_at,
-      card.flavor_text,
+      card?.flavor_text,
     ]
   );
 

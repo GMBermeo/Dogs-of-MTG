@@ -161,7 +161,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       >
                         <Image
                           className="mb-1"
-                          src={print.image_uris?.png}
+                          src={print.image_uris?.small}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
                           width={672}
                           height={936}
