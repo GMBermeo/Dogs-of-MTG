@@ -1,6 +1,6 @@
 {
-  "short_name": "Rats of MTG",
-  "name": "The Rats of Magic The Gathering",
+  "short_name": "Zombies of MTG",
+  "name": "The Zombies of Magic The Gathering",
   "description": "This tool was developed using the Static Site Generation (SSG) concept with Next.js in order to index all the dog type cards of the Magic The Gathering for a private collection. 🐶 The source code can be found on github and easily changed to any other parameter.",
   "icons": [
     {

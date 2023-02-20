@@ -30,13 +30,13 @@ export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   const cardCollection: TCard[] = [];
   await sleep();
 
-  // Load Rats
-  let rats = await loadCardsFromUrl(
-    `https://api.scryfall.com/cards/search?q=t:rat -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc -is:flip`,
+  // Load Zombies
+  let zombies = await loadCardsFromUrl(
+    `https://api.scryfall.com/cards/search?q=t:zombie -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc -is:flip`,
     cardCollection
   );
-  while (rats.has_more && rats.next_page) {
-    rats = await loadCardsFromUrl(rats.next_page, cardCollection);
+  while (zombies.has_more && zombies.next_page) {
+    zombies = await loadCardsFromUrl(zombies.next_page, cardCollection);
   }
 
   cardCollection.sort(

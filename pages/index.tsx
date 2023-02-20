@@ -38,16 +38,19 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
   return (
     <>
       <Head>
-        <title>The Rats of Magic the Gathering</title>
+        <title>The Zombies of Magic the Gathering</title>
         <meta
           name="description"
-          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
+          content="'Feeding a normal army is a problem of logistics. With zombies, it is an asset. Feeding is why they fight. Feeding is why they are feared.' —Jadar, ghoulcaller of Nephalia. This is a tool to catalog all Zombie cards from Magic The Gathering"
         />
 
-        <meta property="og:title" content="The Rats of Magic the Gathering" />
+        <meta
+          property="og:title"
+          content="The Zombies of Magic the Gathering"
+        />
         <meta
           property="og:description"
-          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
+          content="'Feeding a normal army is a problem of logistics. With zombies, it is an asset. Feeding is why they fight. Feeding is why they are feared.' —Jadar, ghoulcaller of Nephalia. This is a tool to catalog all Zombie cards from Magic The Gathering"
         />
         <meta
           property="og:image"
@@ -55,7 +58,7 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         />
         <meta property="og:image:width" content="3000" />
         <meta property="og:image:height" content="3000" />
-        <meta property="og:url" content="https://rats-of-mtg.bermeo.dev/" />
+        <meta property="og:url" content="https://zombies-of-mtg.bermeo.dev/" />
         <meta property="og:locale" content="en_US" />
       </Head>
       <div className="print:bg-white print:text-black">

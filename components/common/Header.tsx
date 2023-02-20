@@ -14,7 +14,7 @@ export const Header = () => {
           height={48}
           priority
         /> */}
-        The Rats of
+        The Zombies of
         <span className="font-mtg my-auto ml-2 self-end text-xl md:mt-auto md:mb-0 md:text-4xl">
           Magic the Gathering
         </span>

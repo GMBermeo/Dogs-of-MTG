@@ -13,16 +13,19 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
   return (
     <>
       <Head>
-        <title>The Rats of Magic the Gathering - All Prints</title>
+        <title>The Zombies of Magic the Gathering - All Prints</title>
         <meta
           name="description"
-          content="'With great power comes great risk of getting yourself killed' -Goblin Arsonist. This site catalogs all Rats from Magic The Gathering. This is a side-quest from The Dogs of Magic the Gathering"
+          content="'With great power comes great risk of getting yourself killed' -Goblin Arsonist. This site catalogs all Zombies from Magic The Gathering. This is a side-quest from The Dogs of Magic the Gathering"
         />
 
-        <meta property="og:title" content="The Rats of Magic the Gathering" />
+        <meta
+          property="og:title"
+          content="The Zombies of Magic the Gathering"
+        />
         <meta
           property="og:description"
-          content="'With great power comes great risk of getting yourself killed' -Goblin Arsonist. This site catalogs all Rats from Magic The Gathering. This is a side-quest from The Dogs of Magic the Gathering"
+          content="'With great power comes great risk of getting yourself killed' -Goblin Arsonist. This site catalogs all Zombies from Magic The Gathering. This is a side-quest from The Dogs of Magic the Gathering"
         />
         <meta
           property="og:image"
@@ -30,7 +33,7 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         />
         <meta property="og:image:width" content="3000" />
         <meta property="og:image:height" content="3000" />
-        <meta property="og:url" content="https://rats-of-mtg.bermeo.dev/" />
+        <meta property="og:url" content="https://zombies-of-mtg.bermeo.dev/" />
         <meta property="og:locale" content="en_US" />
       </Head>
       <div className="print:bg-white print:text-black">
