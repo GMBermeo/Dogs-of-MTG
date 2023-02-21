@@ -41,7 +41,7 @@ export function convertDoubleFacedCard(
       image_uris: {
         small: doubleFacedCard.card_faces[0].image_uris.small,
         large: doubleFacedCard.card_faces[0].image_uris.large,
-        png: doubleFacedCard.card_faces[0].image_uris.png,
+        normal: doubleFacedCard.card_faces[0].image_uris.normal,
         art_crop: doubleFacedCard.card_faces[0].image_uris.art_crop,
       },
       flavor_text: null,
@@ -72,7 +72,7 @@ export function convertDoubleFacedCard(
       image_uris: {
         small: doubleFacedCard.card_faces[1].image_uris.small,
         large: doubleFacedCard.card_faces[1].image_uris.large,
-        png: doubleFacedCard.card_faces[1].image_uris.png,
+        normal: doubleFacedCard.card_faces[1].image_uris.normal,
         art_crop: doubleFacedCard.card_faces[1].image_uris.art_crop,
       },
       flavor_text: null,

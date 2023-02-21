@@ -1,7 +1,7 @@
 export interface ImageUrisCard {
   small: string;
+  normal: string;
   large: string;
-  png: string;
   art_crop: string;
 }
 

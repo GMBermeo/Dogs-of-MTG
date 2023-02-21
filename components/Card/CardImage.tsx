@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 type CardImageProps = {
-  png: string;
+  normal: string;
   large: string;
   id: string;
   name: string;
@@ -13,7 +13,7 @@ type CardImageProps = {
 };
 
 export const CardImage = ({
-  png,
+  normal,
   id,
   name,
   artist,
@@ -31,7 +31,7 @@ export const CardImage = ({
     // <div className="relative h-full w-full">
     <Image
       className="my-2 w-full cursor-pointer rounded-xl px-1 print:block print:w-[220px] print:rounded-none"
-      src={png}
+      src={large}
       alt={`${name} - ${artist} (${frame}) ${flavor_text ? flavor_text : ""}`}
       blurDataURL={small}
       placeholder="blur"
