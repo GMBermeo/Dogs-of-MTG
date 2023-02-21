@@ -9,7 +9,7 @@ type CardImageProps = {
   name: string;
   artist: string;
   frame: string;
-  flavor_text?: string;
+  flavor_text: string | null;
   small: string;
 };
 
@@ -23,10 +23,10 @@ export const CardImage = ({
   flavor_text,
   small,
 }: CardImageProps) => {
-  function enlarge(e: { preventDefault: () => void }) {
-    e.preventDefault();
-    window.open(large, "_blank");
-  }
+  // function enlarge(e: { preventDefault: () => void }) {
+  //   e.preventDefault();
+  //   window.open(large, "_blank");
+  // }
 
   return (
     // <div className="relative h-full w-full">

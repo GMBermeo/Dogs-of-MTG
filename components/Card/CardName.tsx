@@ -1,9 +1,7 @@
 import { TCard } from "@/types/TCard";
 import React from "react";
 
-type CardNameProps = Partial<TCard> & {
-  link: string;
-};
+type CardNameProps = Partial<TCard> & {};
 
 export const CardName = ({ name }: CardNameProps) => {
   // function gatherer(e: { preventDefault: () => void }) {

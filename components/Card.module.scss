@@ -1,0 +1,45 @@
+.Link {
+  @apply shadow-2xl shadow-orange-600/5;
+  grid-row-end: auto;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 0.75rem /* 12px */;
+  background-color: #00000022;
+
+  page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  page-break-inside: avoid; /* or 'auto' */
+
+  img {
+    page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-inside: avoid; /* or 'auto' */
+  }
+}
+
+//Media print
+@media print {
+  .Link {
+    box-shadow: none;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+    border: {
+      width: 2px;
+      color: #00000066;
+      style: dashed;
+    }
+
+    page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-inside: avoid; /* or 'auto' */
+
+    img {
+      display: block;
+      page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+      page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+      page-break-inside: avoid; /* or 'auto' */
+    }
+  }
+}

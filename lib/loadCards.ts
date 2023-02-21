@@ -1,50 +1,49 @@
-import { TCard } from "@/types/TCard";
+import { TCard, TCardResponse, TDoubleFacedCardResponse } from "@/types/TCard";
 import { TList } from "@/types/TList";
+import axios from "axios";
+import { convertCard, convertDoubleFacedCard } from "./convertResponseToCard";
 
-export async function loadCards() {
+export function sleep(): Promise<void> {
+  if (!process.env.IS_BUILD) {
+    return Promise.resolve();
+  }
+  const ms = Math.floor(1123.5 * (Math.random() + 2));
+  console.log(`😴Building: ${ms}ms💤`);
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// async function loadCardsFromUrl(url: string, cards: TCard[]) {
+//   await sleep();
+//   const response = await axios.get(url).then((res) => res.data as TList);
+//   response.data.map((card: TCardResponse) => cards.push(convertCard(card)));
+//   return response;
+// }
+
+async function loadCardsFromUrl(url: string, cards: TCard[]) {
+  await sleep();
+  const response = await axios.get(url).then((res) => res.data as TList);
+  response.data.forEach((card: TCardResponse) => cards.push(convertCard(card)));
+  return response;
+}
+
+export async function loadCards(type: "prints" | "art"): Promise<TCard[]> {
   const cardCollection: TCard[] = [];
+  await sleep();
 
-  const crabCards = await fetch(
-    "https://api.scryfall.com/cards/search?q=t:crab -is:digital order:released unique:prints -is:dfc -is:mdfc"
-  )
-    .then((res) => res.json() as Promise<TList>)
-    .then((data) => cardCollection.push(...data.data));
+  // Load Rats
+  let rats = await loadCardsFromUrl(
+    `https://api.scryfall.com/cards/search?q=t:rat -is:digital in:paper order:released unique:${type} -is:dfc -is:mdfc -is:flip`,
+    cardCollection
+  );
+  while (rats.has_more && rats.next_page) {
+    rats = await loadCardsFromUrl(rats.next_page, cardCollection);
+  }
 
-  // const releaseTheDogs = await fetch(
-  //   "https://api.scryfall.com/cards/7df3cd89-02c9-4a1c-9a8a-d17a0b1030c9"
-  // )
-  //   .then((res) => res.json() as Promise<TCard>)
-  //   .then((data) => cardCollection.push(data));
-
-  const crabTokens = await fetch(
-    "https://api.scryfall.com/cards/search?q=t:crab t:token unique:art -is:dfc -is:mdfc"
-  )
-    .then((res) => res.json() as Promise<TList>)
-    .then((data) => cardCollection.push(...data.data));
-
-  // const mowuTokens = await fetch(
-  //   "https://api.scryfall.com/cards/b10441dd-9029-4f95-9566-d3771ebd36bd"
-  // )
-  //   .then((res) => res.json() as Promise<TList>)
-  //   .then((data) => console.log(data.data.map((card) => card.name)));
-
-  cardCollection.sort((a, b) => b.released_at.localeCompare(a.released_at));
-
-  // cards.push(await res2.json());
-
-  // console.log(dogCards);
-
-  // try {
-  // code that we will 'try' to run
-
-  //   console.log("Dogs api carregados", data);
-  // } catch (error) {
-  // code to run if there are any problems
-  // fetch("./localDogs.json")
-  //   .then((response) => response.json())
-  //   .then((json) => setDados(json));
-  // console.log("Dogs local carregados");
-  // }
+  cardCollection.sort(
+    (a, b) =>
+      b.released_at?.localeCompare(a.released_at) ||
+      b.collector_number.localeCompare(a.collector_number)
+  );
 
   return cardCollection;
 }

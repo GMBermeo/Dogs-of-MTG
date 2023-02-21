@@ -2,13 +2,15 @@
 import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
-import { loadCard } from "@/lib/loadCard";
-import { loadCardPrints } from "@/lib/loadCardPrints";
+import { loadCard, TCardWithPrints } from "@/lib/loadCard";
 import { TCard } from "@/types/TCard";
 import { PaintBrushIcon } from "@heroicons/react/20/solid";
+import { sleep } from "@/lib/loadCards";
 
 type CardPageProps = {
   card: TCard;
@@ -16,7 +18,7 @@ type CardPageProps = {
 };
 
 const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
-  // console.log(prints);
+  // console.log(getAllCardsIds());
   const quantidade = prints?.length;
 
   const columns =
@@ -30,16 +32,51 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
     <>
       <Head>
         <title>
-          {`${card?.name} (${card?.frame}) - The Doggos of Magic the Gathering`}
+          {`${card?.name} (${card?.released_at.slice(
+            0,
+            4
+          )}) - The Goblins of Magic the Gathering`}
         </title>
         <meta
           name="description"
           content={
             card?.flavor_text
-              ? `${card?.flavor_text}. Painted by ${card?.artist} (${card?.frame})`
-              : `${card?.name} - ${card?.set_name}. Painted by ${card?.artist} (${card?.frame})`
+              ? `${card?.flavor_text}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
           }
         />
+        <meta
+          property="og:title"
+          content={`${card?.name} (${card?.released_at.slice(
+            0,
+            4
+          )}) - The Goblins of Magic the Gathering`}
+        />
+        <meta
+          property="og:description"
+          content={
+            card?.flavor_text
+              ? `${card?.flavor_text}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
+              : `${card?.name} - ${card?.set_name}. Painted by ${
+                  card?.artist
+                } (${card?.released_at.slice(0, 4)})`
+          }
+        />
+        <meta
+          property="og:image"
+          content={card?.image_uris.art_crop ?? card?.image_uris.large}
+        />
+        <meta
+          property="og:url"
+          content={`https://rats-of-mtg.bermeo.dev/card/${card?.id}`}
+        />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <div className="mx-auto mb-2 max-w-2xl md:mt-4">
         <div className="row-end-auto m-0 rounded-none bg-[#00000022] p-6 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none md:rounded-lg">
@@ -58,19 +95,16 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                 promo={card?.promo}
                 reprint={card?.reprint}
                 variation={card?.variation}
-                frame={card?.frame}
               />
             </div>
           </div>
           <a
-            href={
-              card?.image_uris.art_crop ?? "https://crabs-of-mtg.bermeo.dev"
-            }
+            href={card?.image_uris.art_crop ?? "https://rats-of-mtg.bermeo.dev"}
             className="hover:cursor-zoom-in"
           >
             <img
               className="my-4 min-w-full rounded"
-              src={card?.image_uris.art_crop ?? card?.image_uris.large}
+              src={card?.image_uris.art_crop}
               alt={card?.name}
               width={624}
               height={455.5}
@@ -83,7 +117,12 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
           </div>
           <div className="p-4 text-lg">
             <p className="mb-2 text-sm text-slate-300">{card?.oracle_text}</p>
-            <p className="italic">{card?.flavor_text ?? ""}</p>
+            <p
+              className="italic"
+              dangerouslySetInnerHTML={{
+                __html: card?.flavor_text ?? "",
+              }}
+            />
           </div>
 
           <div className="mb-4 flex justify-between">
@@ -104,29 +143,34 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             <section>
               <h5 className="mb-2 text-2xl">Prints</h5>
               <div className={`grid gap-4 ${columns}`}>
-                {prints.map((print: TCard) => (
+                {prints.map((print: TCard, index) => (
                   <div
                     className="mb-2 text-center text-xs font-bold"
-                    key={print.id}
+                    key={index}
                   >
                     <div>
                       <a
                         href={
                           print.image_uris?.large ??
-                          "https://crabs-of-mtg.bermeo.dev"
+                          "https://rats-of-mtg.bermeo.dev"
                         }
                         className="hover:cursor-zoom-in"
                       >
                         <img
                           className="mb-1"
-                          src={print.image_uris?.normal}
+                          src={print.image_uris?.png}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
                           width={672}
                           height={936}
                           placeholder="blur"
                         />
                       </a>
-                      <a href={print.related_uris.gatherer ?? ""}>
+                      <a
+                        href={
+                          print.related_uris?.gatherer ??
+                          "https://rats-of-mtg.bermeo.dev"
+                        }
+                      >
                         <h6>{print.set_name}</h6>
                         <p>{print.released_at}</p>
                       </a>
@@ -145,16 +189,11 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
 export default CardPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  await sleep();
+  // const prints: TCard[] = [];
   const { id } = params!;
-  const card = await loadCard(id as string);
-  const printsResponse: TCard[] = await loadCardPrints(card?.prints_search_uri);
-  const stringifiedPrints = JSON.stringify(printsResponse);
-  const trimmedPrints = stringifiedPrints?.trim() || "";
-  const prints: TCard[] = await JSON.parse(trimmedPrints);
-  // printsResponse !== undefined
-  //   ? JSON.parse(JSON.stringify(printsResponse))
-  //   : undefined;
-
+  const cardWithPrints: TCardWithPrints = await loadCard(id as string);
+  const { card, prints } = cardWithPrints;
   return {
     props: { card, prints },
   };
@@ -165,6 +204,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  await sleep();
   const paths = await getAllCardsIds();
   // const postList: PostData[] = await GetPosts()
   return {

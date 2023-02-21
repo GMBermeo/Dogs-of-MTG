@@ -1,45 +1,29 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import { CardImage } from "./Card/CardImage";
-import { ArtCrop } from "./Card/ArtCrop";
 import { CardName } from "./Card/CardName";
 import { CardTags } from "./Card/CardTags";
-import { OtherPrints } from "./Card/OtherPrints";
-import { loadCardPrints } from "@/lib/loadCardPrints";
 import { TCard } from "@/types/TCard";
 import Link from "next/link";
+import { loadCardPrintsQuantity } from "@/lib/loadCard";
+import s from "./Card.module.scss";
 
-export const Card = ({ card }: { card: TCard }) => {
-  const [prints, setPrints] = React.useState<TCard[]>([]);
+export const CardComponent = ({
+  card,
+  index,
+}: {
+  card: TCard;
+  index: number;
+}) => {
+  const [prints, setPrints] = React.useState<number>(0);
 
   React.useEffect(() => {
-    loadCardPrints(card.prints_search_uri).then((data) => {
+    loadCardPrintsQuantity(card.prints_search_uri).then((data) => {
       setPrints(data);
     });
   }, [card.prints_search_uri]);
 
-  return (
-    <Link
-      href={`/card/${card.id}`}
-      className="row-end-auto m-0 rounded-xl bg-[#00000022] p-4 shadow-2xl shadow-orange-600/5 print:block print:rounded-none print:bg-transparent print:p-0 print:shadow-none"
-    >
-      <div className="flex justify-between">
-        <div className="text-sm font-medium">{card.released_at}</div>
-        {prints.length > 1 && (
-          <h6 className="text-center text-sm font-semibold">
-            {prints.length} prints
-          </h6>
-        )}
-      </div>
-      <div className="mt-1 flex justify-between">
-        <CardName name={card.name} link={"/card/" + card.id} />
-        <CardTags
-          full_art={card.full_art}
-          promo={card.promo}
-          reprint={card.reprint}
-          variation={card.variation}
-          frame={card.frame}
-        />
-      </div>
+  const memoizedCardImage = useMemo(
+    () => (
       <CardImage
         png={card.image_uris.png}
         large={card.image_uris.large}
@@ -47,48 +31,46 @@ export const Card = ({ card }: { card: TCard }) => {
         id={card.id}
         name={card.name}
         artist={card.artist}
-        frame={card.frame}
+        frame={card.released_at.slice(0, 4)}
         flavor_text={card?.flavor_text}
       />
-      <div className="mb-2 flex flex-col gap-y-2">
-        <h4 className="text-center font-bold">{card.set_name}</h4>
-        {/* <CardTags
+    ),
+    [
+      card.id,
+      card.image_uris.png,
+      card.image_uris.large,
+      card.image_uris.small,
+      card.name,
+      card.artist,
+      card.released_at,
+      card.flavor_text,
+    ]
+  );
+
+  return (
+    <Link href={`/card/${card.id}`} className={s.Link}>
+      <div className="flex justify-between">
+        <div className="text-sm font-medium">{card.released_at}</div>
+        {prints > 1 && (
+          <h6 className="text-center text-xs font-semibold">{prints} prints</h6>
+        )}
+      </div>
+      <div className="mt-1 flex justify-between">
+        <CardName name={card.name} />
+        <CardTags
           full_art={card.full_art}
           promo={card.promo}
           reprint={card.reprint}
           variation={card.variation}
-          frame={card.frame}
-        /> */}
-      </div>
-      {/* {prints.length >= 2 && (
-        <ArtCrop
-          id={card.id}
-          artCrop={card.image_uris.art_crop}
-          large={card.image_uris.large}
-          name={card.name}
-          artist={card.artist}
-          frame={card.frame}
         />
-      )}
-      {prints.length === 1 ? (
-        <>
-          <CardImage
-            png={card.image_uris.png}
-            large={card.image_uris.large}
-            id={card.id}
-            name={card.name}
-            artist={card.artist}
-            frame={card.frame}
-            flavor_text={card?.flavor_text}
-          />
-          <h4 className="text-center font-bold">{card.set_name}</h4>
-        </>
-      ) : (
-        <>
-          <h4 className="font-bold">{card.set_name}</h4>
-          <OtherPrints prints={prints} />
-        </>
-      )} */}
+      </div>
+      {memoizedCardImage}
+      <div className="mb-2 flex flex-col gap-y-2">
+        <h4 className="text-center font-bold">{card.set_name}</h4>
+        <p className="hidden print:block">{index}</p>
+      </div>
     </Link>
   );
 };
+
+export const Card = memo(CardComponent);
