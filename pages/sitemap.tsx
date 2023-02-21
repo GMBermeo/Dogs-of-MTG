@@ -14,7 +14,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`}
       {`<url>
-      <loc>https://rats-of-mtg.bermeo.dev</loc>
+      <loc>https://crabs-of-mtg.bermeo.dev</loc>
       <image:image>
          <image:loc>https://dogs-of-mtg.bermeo.dev/Logo.svg</image:loc>
          <image:loc>https://dogs-of-mtg.bermeo.dev/icons/favicon-3000x3000.png</image:loc>
@@ -22,7 +22,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
       </image:image>
    </url>`}
       {`<url>
-      <loc>https://rats-of-mtg.bermeo.dev/all-prints</loc>
+      <loc>https://crabs-of-mtg.bermeo.dev/all-prints</loc>
       <image:image>
       `}
       {allCardsCollection.map((card: TCard, index) => (
@@ -36,7 +36,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
       {`</image:image>
    </url>`}
       {`<url>
-      <loc>https://rats-of-mtg.bermeo.dev/en/all-prints</loc>
+      <loc>https://crabs-of-mtg.bermeo.dev/en/all-prints</loc>
       <image:image>
       `}
       {allCardsCollection.map((card: TCard, index) => (
@@ -52,7 +52,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
       {allCardsCollection.map((card: TCard, index) => (
         <p key={index}>
           {`<url>
-          <loc>https://rats-of-mtg.bermeo.dev/card/${card.id}</loc>
+          <loc>https://crabs-of-mtg.bermeo.dev/card/${card.id}</loc>
             <image:image>
               <image:loc>${card.image_uris.art_crop}</image:loc>
               <image:loc>${card.image_uris.large}</image:loc>
@@ -61,7 +61,7 @@ const Sitemap: NextPage<SiteMapProps> = ({ allCardsCollection }) => {
             </image:image>
           </url>
           <url>
-          <loc>https://rats-of-mtg.bermeo.dev/en/card/${card.id}</loc>
+          <loc>https://crabs-of-mtg.bermeo.dev/en/card/${card.id}</loc>
             <image:image>
               <image:loc>${card.image_uris.art_crop}</image:loc>
               <image:loc>${card.image_uris.large}</image:loc>

@@ -13,7 +13,7 @@ const nextConfig = {
       {
         // Note: subdomains must be included in the domain value to be matched
         // e.g. www.example.com should be used if that is the expected hostname
-        domain: "rats-of-mtg.bermeo.dev",
+        domain: "crabs-of-mtg.bermeo.dev",
         defaultLocale: "en",
       },
     ],

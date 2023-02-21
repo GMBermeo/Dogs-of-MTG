@@ -38,16 +38,16 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
   return (
     <>
       <Head>
-        <title>The Rats of Magic the Gathering</title>
+        <title>The Crabs of Magic the Gathering</title>
         <meta
           name="description"
-          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
+          content="'Yeah, they've got a lot of meat. The only downside to eating'em is that you often find human bones and body parts inside'—Jaby, Silundi Sea nomad. This is a tool to catalog all Crab cards from Magic The Gathering"
         />
 
-        <meta property="og:title" content="The Rats of Magic the Gathering" />
+        <meta property="og:title" content="The Crabs of Magic the Gathering" />
         <meta
           property="og:description"
-          content="'Their stench was vile and strong enough, but not nearly as powerful as their hunger.' This is a tool to catalog all Rat cards from Magic The Gathering"
+          content="'Yeah, they've got a lot of meat. The only downside to eating'em is that you often find human bones and body parts inside'—Jaby, Silundi Sea nomad. This is a tool to catalog all Crab cards from Magic The Gathering"
         />
         <meta
           property="og:image"
@@ -55,7 +55,7 @@ const Home: NextPage<HomeProps> = ({ cardCollection }) => {
         />
         <meta property="og:image:width" content="3000" />
         <meta property="og:image:height" content="3000" />
-        <meta property="og:url" content="https://rats-of-mtg.bermeo.dev/" />
+        <meta property="og:url" content="https://crabs-of-mtg.bermeo.dev/" />
         <meta property="og:locale" content="en_US" />
       </Head>
       <div className="print:bg-white print:text-black">

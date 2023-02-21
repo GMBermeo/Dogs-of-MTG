@@ -74,7 +74,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
         />
         <meta
           property="og:url"
-          content={`https://rats-of-mtg.bermeo.dev/card/${card?.id}`}
+          content={`https://crabs-of-mtg.bermeo.dev/card/${card?.id}`}
         />
         <meta property="og:locale" content="en_US" />
       </Head>
@@ -99,7 +99,9 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             </div>
           </div>
           <a
-            href={card?.image_uris.art_crop ?? "https://rats-of-mtg.bermeo.dev"}
+            href={
+              card?.image_uris.art_crop ?? "https://crabs-of-mtg.bermeo.dev"
+            }
             className="hover:cursor-zoom-in"
           >
             <img
@@ -152,7 +154,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       <a
                         href={
                           print.image_uris?.large ??
-                          "https://rats-of-mtg.bermeo.dev"
+                          "https://crabs-of-mtg.bermeo.dev"
                         }
                         className="hover:cursor-zoom-in"
                       >
@@ -168,7 +170,7 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                       <a
                         href={
                           print.related_uris?.gatherer ??
-                          "https://rats-of-mtg.bermeo.dev"
+                          "https://crabs-of-mtg.bermeo.dev"
                         }
                       >
                         <h6>{print.set_name}</h6>
