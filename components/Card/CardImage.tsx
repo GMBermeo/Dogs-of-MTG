@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React from "react";
 
@@ -29,15 +30,13 @@ export const CardImage = ({
 
   return (
     // <div className="relative h-full w-full">
-    <Image
+    <img
       className="my-2 w-full cursor-pointer rounded-xl px-1 print:block print:w-[220px] print:rounded-none"
       src={normal}
       alt={`${name} - ${artist} (${frame}) ${flavor_text ? flavor_text : ""}`}
-      blurDataURL={small}
       placeholder="blur"
       width={678}
       height={935}
-      unoptimized
       // objectFit="contain"
       // fill={true}
     />

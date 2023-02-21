@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,12 +11,11 @@ export const Footer = () => {
           href="https://dogs-of-mtg.bermeo.dev"
           className="hidden opacity-50 hover:opacity-100 md:block"
         >
-          <Image
+          <img
             src="https://dogs-of-mtg.bermeo.dev/Logo.svg"
             height={36}
             width={36}
             alt="The Dogs of Magic of the Gathering Logo"
-            priority
           />
         </Link>
         <div className="my-auto">
@@ -27,21 +27,19 @@ export const Footer = () => {
         </div>
         <div className="flex justify-end gap-x-4 md:gap-x-6">
           <Link href="https://github.com/GMBermeo">
-            <Image
+            <img
               src="https://dogs-of-mtg.bermeo.dev/social/github.svg"
               height={36}
               width={36}
               alt="Github Invertocat Logo"
-              priority
             />
           </Link>
           <Link href="https://www.linkedin.com/in/gmbermeo/">
-            <Image
+            <img
               src="https://dogs-of-mtg.bermeo.dev/social/linkedin.svg"
               height={36}
               width={36}
               alt="Linkedin Logo"
-              priority
             />
           </Link>
         </div>

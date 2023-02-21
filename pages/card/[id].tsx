@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
@@ -103,15 +104,13 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
             }
             className="hover:cursor-zoom-in"
           >
-            <Image
+            <img
               className="my-4 min-w-full rounded"
               src={card?.image_uris.art_crop}
               alt={card?.name}
               width={624}
               height={455.5}
-              priority
               placeholder="blur"
-              blurDataURL={card?.image_uris.art_crop}
             />
           </a>
           <div className="flex justify-between font-bold">
@@ -159,13 +158,12 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                         }
                         className="hover:cursor-zoom-in"
                       >
-                        <Image
+                        <img
                           className="mb-1"
                           src={print.image_uris?.small}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
                           width={672}
                           height={936}
-                          blurDataURL={print.image_uris?.small}
                           placeholder="blur"
                         />
                       </a>

@@ -8,5 +8,5 @@ export const CardName = ({ name }: CardNameProps) => {
   //   e.preventDefault();
   //   window.open(link, "_blank");
   // }
-  return <h3 className="font-regular cursor-pointer text-xl">{name}</h3>;
+  return <h3 className="font-regular cursor-pointer text-lg">{name}</h3>;
 };
