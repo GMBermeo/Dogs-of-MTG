@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
-import React from "react";
 import { CardTags } from "@/components/Card/CardTags";
 import { getAllCardsIds } from "@/lib/getAllCardsIds";
 import { loadCard } from "@/lib/loadCard";
@@ -62,11 +62,19 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
               />
             </div>
           </div>
-          <a href={card?.image_uris.art_crop ?? ""}>
+          <a
+            href={
+              card?.image_uris.art_crop ?? "https://crabs-of-mtg.bermeo.dev"
+            }
+            className="hover:cursor-zoom-in"
+          >
             <img
               className="my-4 min-w-full rounded"
               src={card?.image_uris.art_crop ?? card?.image_uris.large}
               alt={card?.name}
+              width={624}
+              height={455.5}
+              placeholder="blur"
             />
           </a>
           <div className="flex justify-between font-bold">
@@ -102,11 +110,20 @@ const CardPage: NextPage<CardPageProps> = ({ card, prints }) => {
                     key={print.id}
                   >
                     <div>
-                      <a href={print.image_uris.large ?? ""}>
+                      <a
+                        href={
+                          print.image_uris?.large ??
+                          "https://crabs-of-mtg.bermeo.dev"
+                        }
+                        className="hover:cursor-zoom-in"
+                      >
                         <img
-                          className="mb-1 rounded-xl"
-                          src={print.image_uris.large}
+                          className="mb-1"
+                          src={print.image_uris?.normal}
                           alt={`${print.name} from ${print.set_name} painted by ${print.artist}`}
+                          width={672}
+                          height={936}
+                          placeholder="blur"
                         />
                       </a>
                       <a href={print.related_uris.gatherer ?? ""}>

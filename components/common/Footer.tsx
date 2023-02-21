@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,13 +8,16 @@ export const Footer = () => {
   return (
     <footer className="mb-4 flex w-screen flex-col py-4 px-4 md:px-8">
       <div className="flex justify-between">
-        <Link href="/" className="hidden opacity-50 hover:opacity-100 md:block">
-          {/* <Image
-            src="/Logo.svg"
+        <Link
+          href="https://dogs-of-mtg.bermeo.dev"
+          className="hidden opacity-50 hover:opacity-100 md:block"
+        >
+          <img
+            src="https://dogs-of-mtg.bermeo.dev/Logo.svg"
             height={36}
             width={36}
-            alt="The 🦀 of Magic of the Gathering Logo"
-          /> */}
+            alt="The Dogs of Magic of the Gathering Logo"
+          />
         </Link>
         <div className="my-auto">
           <h2 className="text-sm font-semibold text-[#333545] hover:text-[#3e4153] md:text-base">
@@ -21,17 +25,17 @@ export const Footer = () => {
           </h2>
         </div>
         <div className="flex justify-end gap-x-4 md:gap-x-6">
-          <a href="https://github.com/GMBermeo">
-            <Image
-              src="/social/github.svg"
+          <Link href="https://github.com/GMBermeo">
+            <img
+              src="https://dogs-of-mtg.bermeo.dev/social/github.svg"
               height={36}
               width={36}
               alt="Github Invertocat Logo"
             />
-          </a>
-          <a href="https://www.linkedin.com/in/gmbermeo/">
-            <Image
-              src="/social/linkedin.svg"
+          </Link>
+          <Link href="https://www.linkedin.com/in/gmbermeo/">
+            <img
+              src="https://dogs-of-mtg.bermeo.dev/social/linkedin.svg"
               height={36}
               width={36}
               alt="Linkedin Logo"

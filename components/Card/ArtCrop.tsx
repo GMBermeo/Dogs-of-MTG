@@ -1,4 +1,4 @@
-import { ImageUris } from "@/types/TCard";
+/* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -44,7 +44,6 @@ export const ArtCrop = ({
     );
   else
     return (
-      // eslint-disable-next-line @next/next/no-img-element
       <img
         className="my-1 w-full cursor-pointer rounded-lg px-1 print:block print:w-[220px] print:rounded-none"
         src={large}
